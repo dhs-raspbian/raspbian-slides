@@ -3379,7 +3379,7 @@
 		// Update progress if enabled
 		if( config.progress && dom.progressbar ) {
 
-			dom.progressbar.style.width = getProgress() * dom.wrapper.offsetWidth + 'px';
+			dom.progressbar.style.width = 0.7 * getProgress() * dom.wrapper.offsetWidth + 'px';
 
 		}
 
@@ -4250,7 +4250,7 @@
 
 				// This value represents how big a portion of the slide progress
 				// that is made up by its fragments (0-1)
-				var fragmentWeight = 0.9;
+				var fragmentWeight = 0.7;
 
 				// Add fragment progress to the past slide count
 				pastCount += ( visibleFragments.length / allFragments.length ) * fragmentWeight;
@@ -5700,9 +5700,9 @@
 
 		this.progress = this.progressCheck();
 
-		// When we loop, offset the progress so that it eases
+		// When we loop, offset the progress so that it eases //changed
 		// smoothly rather than immediately resetting
-		if( progressBefore > 0.8 && this.progress < 0.2 ) {
+		if( progressBefore > 0.6 && this.progress < 0.2 ) {
 			this.progressOffset = this.progress;
 		}
 

@@ -1,26 +1,26 @@
 <!doctype html>
-<html lang="en">
-
+<html>
+  <style type="text/css">
+  .centerImage
+  {
+  text-align:center;
+  display:block;
+  }
+  </style>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
 
-		<title>reveal.js – The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
-
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+		<title>Raspberry Pi Workshop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-
+		<link rel="stylesheet" href="css/theme/white.css">
+		<!-- <link rel="import" href="static/helloworld.html"> -->
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
-
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -28,422 +28,666 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
+      Reveal.configure({ backgroundTransition: 'zoom' })
 		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
+		<script src="jquery.js"></script> 
+    <!-- <script> 
+      $(function(){
+        $("#includedContent").load("templates/opencv.html"); 
+    });
+    </script> -->
 	</head>
-
 	<body>
-
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+        <!--MAIN INTRO -->
 				<section>
-<<<<<<< HEAD
-					<section>What is a Raspberry Pi?</section>
-					<section><img src="https://raw.githubusercontent.com/SeeedDocument/Raspberry-Pi-4/master/img/hardware-overview-1400.jpg">Hardware Overview</img></section>
-					<section data-transition="slide" data-background-transition="zoom">
-					<img src="/static/make.png">Projects are found all over the internet</img></section></section>
-=======
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
-					</p>
-				</section>
+          <p style='font-size: 2em;'>A Raspberry Pi Workshop</p>
+        </section>
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
+        <!--INTRO TO RASPBERRY PI-->
+        <section>
+          <section>
+            <p style='font-size: 1.8em; color: #aaa;'><b>What is a Raspberry Pi?</b></p>
+            <p class='fragment'>A single board computer, which contains</p>
+            <ul class='fragment'>
+              <li>CPU</li>
+              <li>Random Access Memory (RAM)</li>
+              <li>Wifi/Bluetooth</li>
+            </ul>
+            <p class='fragment'>So basically, like a regular computer but with some different features.</p> 
+          </section>
+          <section data-transition="zoom">
+            <img src="https://raw.githubusercontent.com/SeeedDocument/Raspberry-Pi-4/master/img/hardware-overview-1400.jpg">Hardware Overview (Raspberry Pi 4)</img>
+          </section>
+          <section data-transition="zoom">
+              <img src="/static/make.png">Projects are found all over the internet</img>
+          </section>
+        </section>
 
-				<!-- Example of nested vertical slides -->
+        <!-- Raspbian OS -->
+				<section  data-background-iframe="https://en.wikipedia.org/wiki/Raspbian" data-background-interactive>
+          <div style="position: right; width: 40%; box-shadow: 0 1px 4px #fff, 0 5px 25px rgba(0,0,0,0.2); background-color: #3FBF7F; color: #fff; padding: 20px; font-size: 45px; text-align: center; border-radius: 15px;">
+            <p>Raspbian OS</p>
+          </div>
+          <div style="position: absolute; width: 40%; box-shadow: 0 1px 4px #fff, 0 5px 25px rgba(0,0,0,0.2); background-color: #728C7F; color: #fff; padding: 10px; font-size: 25px; text-align: center; border-radius: 15px;">
+					  <p class="fragment">Like every other operating system (Windows/MacOS), Raspbian OS manages
+					  <span class="fragment">computer hardware,</span> 
+            <span class="fragment">software resources,</span> 
+            <span class="fragment">and computer programs</span></p>
+
+					  <p class="fragment">
+						  It is based off Debian (Linux)
+            </p>
+          </div>
+        </section>
+
+        <!--<section>
+          <span id='duplicate'></span>
+        </section>
+        <script>
+          $(function(){
+            $("#duplicate").load("templates/test.html");
+          });
+        </script>-->
+				<!--?php require "templates../opencv.html";?-->
+        
+        <!--INTRO TO OPEN CV-->
 				<section>
+					<section style='font-size: 2em;'>What is Computer Vision and OpenCV?</section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<blockquote class="blockquote">
+						  Computer Vision is the field of computer science that enables computers to identify and process objects in images and videos in the same way that humans do.
+						</blockquote>
 					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+					<section data-transition="zoom"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.analyticsinsight.net%2Fwp-content%2Fuploads%2F2019%2F04%2FComputer-Vision12.png&f=1&nofb=1"></img>Representation of computer vision
 					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
+					<section id="fragments">
+						<p>Applications of computer vision</p>
+						<ul class="fragment">
+						  <li>Intruder alert</li>
+						  <li>Method of authentication (unlocking your phone through
+							fingerprint/facial recognition)
+						  </li>
+						  <li>Monitor traffic flow</li>
+						  <li>Identification of criminals</li>
+						  <li>A form of user input (hand gestures)</li>
+						  <li>Self-driving cars</li>
+						  <li class="fragment"><em>And many more...!</em></li>
+						</ul>
 					</section>
+          <section>
+            <p style='font-size: 1.8em; color: #aaa;'>What is OpenCV then?</p>
+            <p class="fragment">OpenCV stands for Open Source Computer Vision Library</p>
+            <p class="fragment">OpenCV was built to provide a common infrastructure for computer vision applications.</p>
+            <p class="fragment">It contains more than 2500 optimized algorithms.</p>
+            <p class="fragment">Makes computer vision programs easier to build.</p>
+          </section>
 				</section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="https://slides.com" target="_blank">https://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down the <strong>alt</strong> key (<strong>ctrl</strong> in Linux) and click on any element to zoom towards it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Click again to zoom back out.
-					</p>
-					<p>
-						(NOTE: Use ctrl + click in Linux.)
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
->>>>>>> 2d974e94fe7e2d45c39ad1395117ffa6bae83491
-				</section>
-
-				<section>
-<<<<<<< HEAD
-					<section>Raspbian OS</section>
-					<section>Terminal Commands</section>
+				<!--INTRO TO TERMINAL-->
+        <section>
+          <section>
+            Using the Terminal 
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.macworld.co.uk%2Fcmsdata%2Ffeatures%2F3608274%2FTerminalicon2_thumb800.png&f=1&nofb=1" width='70%'></img>
+          </section>
+					
 					<section>
 					Ctrl-Alt-T to launch the terminal
-					<img src="/static/terminal.jfif"></img>
-					<p>Alternatively, click on the logo</p>
+					<img src="/static/terminal.jfif" width='70%'></img>
+					<p style="font-size: 0.8em;">Alternatively, click on its logo or open it from the menu.</p>
 					</section>
-					<section id="fragments">
 
-					<pre class="fragment"><code class="Terminal">ls</code>(List) This code shows you which directory you are in</pre>
-					<pre class="fragment"><code class="Terminal">cd</code>Use this code to navigate to another directory</pre>
-					<pre class="fragment"><code class="Terminal">cd Documents</code>Navigating to the "Documents Directory" </pre>
-					
+					<section>
+            <p style="color: #aaa;">Terminal commands</p>
+            <div style="background-color: #affaaf; padding: 1px; border-left: 6px solid #33b333;" class="fragment">
+              <p style= 'font-size: 0.8em; text-align: center;'>Showing items in your current directory</p>
+					    <pre><code class="language-bash Terminal">ls</code>(List)>> Desktop Documents Home Downloads Music </pre>
+            </div>
+					  <pre class="fragment"><code class="language-bash Terminal">cd</code>Use this code to navigate to another directory</pre>
+					  <pre class="fragment"><code class="language-bash Terminal">cd Documents</code>Navigating to the "Documents Directory" </pre>
+					  <pre class="fragment"><code class="language-bash Terminal">cd ..</code>Navigating out of the current directory</pre>
 					</section>
-=======
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
+					<section>
+						<pre class="fragment"><code class="language-bash Terminal">python test.py</code>Running a python file "test.py" </pre>
+          	<p class="fragment">Your task now: navigate to the histogram python file you have just saved and run it.</p>
+						<p class="fragment" style= 'font-size: 0.8em; 
+						text-align: center;
+  					color: #3385ff;'>Hint: It is in the Documents folder</p>
+					</section>
+				</section>
+				<!-- End of Terminal-->
+        
+
+        <!--HISTOGRAM EXPLAINED-->
+        <section>
+					<section>Histograms</section>
+          
+          <section>
+            Images are made up of a large number of pixels.
+            <br/>
+            <left><img src="https://bogotobogo.com/python/OpenCV_Python/images/BasicImageOperations/CloudyGoldenGate_grayscale.jpg" width="250" height="192" alt="Gate"></left>
+            <right><img src="https://i.imgur.com/Ta1QtPf.jpg" width="250" height="192" alt="Zoomed"></right>
+            <right><img src="https://i.imgur.com/cPsN3pG.jpg" width="250" height="192" alt="Zoomed"></right>
+            <br/>Each pixel has a brightness intensity value, showing how bright that spot in the image is.
+          </section>
+
+					<section>
+            Image intensity values range from 0 to 255,
+						<br>giving rise to a total range of 256 values
+            <img src="https://bhushanshikhare.files.wordpress.com/2015/05/histogram-legend.jpeg" align="middle">
+            <br>
+            Grayscale Histogram
+          </section>
+
+          <section>
+            Colored images are made up of 3 channels - red, green and blue.
+            <br>
+            <left><img src="https://geometrian.com/programming/reference/subpixelzoo/square_RGB.png" width="350" height="300" alt="RGB" ></left>
+            <right><img src="https://www.mathworks.com/help/examples/matlab/win64/ColorAnalysisWithBivariateHistogramExample_06.png" width="350" height="300"  alt="Histogram"></right>
+            <br>
+            RGB Histogram
+          </section>
+          
+          <section data-transition="slide-in zoom-out">
+            <img src="https://www.mathworks.com/help/examples/matlab/win64/ColorAnalysisWithBivariateHistogramExample_06.png" width="700" height="480"  alt="Histograms"></img>
+            <p>
+            The X and Y-axis indicates the intensity and frequency of a certain color value respectively
+            </p>
+          </section>
+        	<section data-transition="zoom-in convex-out">
+						<p style= 'font-size: 2.2em; 
+						text-align: center;
+  					color: #3385ff;
+  					font-style: oblique;
+  					text-shadow: 4px 8px #b3d1ff;'>
+							Okay, but what do people even use histograms for?
+						</p>
+        	</section>
+
+					<section data-transition="zoom-in convex-out" id="fragments">
+						<img src="https://tr1.cbsistatic.com/hub/i/r/2015/09/30/f66fef72-5d57-48cc-bd8c-7ec0941e73ef/resize/770x/ac0363c3e414d51bafb1dd9b1c8a604a/dataanalysisistockrobuart.jpg" width="390" height="350" alt="Analysis"><br>
+						It allows data scientists and engineers  to visually analyse the frequency and distrbution of data
+        	</section>
+
+					<section data-transition="zoom-in convex-out" id="fragments">
+						<img src=" https://prd-wret.s3-us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/wss-cycle-streamflow-rain-chart.gif"  alt="Streamflow Hisogram"><br>
+						It allows geographers and hydrologists to map out the intensity and analyse the rainfall
+        	</section>
+          <section data-transition="zoom-in" id="fragments">
+						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3.bp.blogspot.com%2F_8-OrJOvdwVI%2FS2plsI0y-iI%2FAAAAAAAAACc%2FNILMxS5hXQw%2Fs640%2FHistogramBasicTutorial.jpg&f=1&nofb=1" width="629" height="300" alt="Photo-histogram"><br>
+						It allows photographers to check the exposure (how bright or dark) of an image
+        	</section>
+          
+          
+				</section>
+        
+        <!--INTRO TO PYTHON-->
+        <!--<div id="python"></div>-->
+			  <section>
+          <section>Python</section>
+
+          <section id="fragments">
+          <pre class="fragment"><code class="language-python Terminal">message = "Who here is familiar with Python?"</code></pre>
+          <pre class="fragment"><code class="language-python Terminal">print(message)</code> >>> Who here is familiar with Python?</pre>
+          </section>
+          
+          <section id="fragments">
+            <pre class="fragment"><code class="language-python Terminal">RAM = 4</code>Integer variable</pre>
+            <pre class="fragment"><code class="language-python Terminal">CPU_GHZ = 1.5</code>Float variable</pre>
+            <pre class="fragment"><code class="language-python Terminal">name = "Raspberry Pi"</code>String variable</pre>
+            <pre class="fragment">
+              <code class="language-python Terminal">
+              tools = ["Mouse", "Keyboard", "Monitor", 
+              "HDML Cable", "Micro USB Power Cable", 
+              "Micro SD Card"]
+            </code>Array (An array in Python can contain any types of variables, <br/>be it integer, float, or string, or even all at once.)</pre>
+          </section>
+          
+          <section id="fragments">
+            <pre class="fragment">
+              <code class="language-python Terminal">
+              if RAM == 5: # Conditional statement
+                print("A pi has 5GB of RAM.")
+              elif RAM == 4: # Second conditional statement
+                print("A pi has 4GB of RAM.")
+              else: # If all the above is false
+                print("I do not know...")
+            </code>If-elif-else conditionals & comments</pre>
+          </section>
+
+          <section id="fragments">
+            <pre class="fragment"><code class="language-python Terminal">RAM += 5</code>Shorthand for "RAM = RAM + 5"</pre>
+            <pre class="fragment"><code class="language-python Terminal">RAM = RAM / 2</code>Divison (returns a float if number has a remainder)</pre>
+            <pre class="fragment"><code class="language-python Terminal">RAM = RAM // 2</code>Floor Division (returns an integer)</pre>
+            <pre class="fragment"><code class="language-python Terminal">RAM = RAM % 2</code>Modulo (returns the remainder when RAM is divided by 2)</pre>
+          </section>
+          
+          <section id="fragments">
+            <pre class="fragment">
+              <code class="language-python Terminal">
+              def addition (a, b):
+                result = a + b
+                return result
+              addition(3,5)
+              >>> 8
+              </code>
+            Call the function using "function_name(inputs)"
+            </pre>
+            <pre class="fragment">
+              <code class="language-python Terminal">
+              def addition (a, b):
+                result = a + b
+                print(result)
+            </code>
+            A function can also not return anything.
+            </pre>
+          </section>
+          <section id="fragments">
+            <pre class="fragment">
+              <code class="language-python Terminal">
+              for i in range (5):
+                print(i)
+              </code>
+            >>> 0 1 2 3 4
+            </pre>
+            <pre class="fragment">
+              <code class="language-python Terminal">
+              for i in range (1, 10, 2):
+                print(i)
+              </code>
+              >>> 1 3 5 7 9
+            </pre>
+          </section>
+			    <section>
+            <pre class="fragment">
+              <code class="language-python Terminal">
+              name = "Raspberry"
+              for char in name:
+                print(char)
+              </code>
+              >>> R a s p b e r r y
+            </pre>
+			    </section>
+			    <section>
+          While Loops &rarr; Continues while condition is met
+            <pre class="fragment">
+              <code class="language-python Terminal">
+              name = "recording"
+              while True:
+                print(name)
+              </code>
+              >>> recording 
+              .....
+              >>> recording 
+            </pre>
+            Continues on infinitely
+          </section>
+          <section>
+            <pre class="fragment">
+              <code class="language-python Terminal">
+              import numpy
+              import cv2
+                </code>Using pre-built functions from libraries.
+            </pre>
+          </section>
+			  </section> 
+        
+        <!--APPLICATION OF OPEN CV + HISTOGRAM ACTIVITY-->
+        <section>
+          <section>
+            <p style='font-size: 2.2em;'>Using OpenCV to...
+						</p>
+						<p>open files/live webcam video</p>
+            <p>display image/video histograms</p>
+          </section>
+
+          <section>
+            <p style='font-size: 1.3em;'>Let's start coding!</p>
+          </section>
+          
+          <section>
+            <p>First, open up the code editor Thonny.</p>
+            <img src='static/thonny/thonny_menu.png' width='440px'></img>
+            <img src='static/thonny/thonny_interface.png' width='440px'></img>
+          </section>
+
+          <section>
+            <p>Importing essential modules</p>
+            <pre><code class="language-python" style="white-space: pre-line;">import numpy as np
+              import cv2
+              from matplotlib import pyplot as plt
+            </code></pre>
+            <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'  class="fragment"> &#128712; What are these for?<ul>
+              <li>Numpy is a useful mathematical library that allows us to <br/>work easier with the large array of pixel information.</li>
+              <li>cv2 contans useful functions whose algorithms are extremely efficient in processing images and video.</li>
+              <li>Matplotlib is a graph-plotting library for us to better <br/>visualize data.</li></ul></pre>
+          </section>
+
+          <section>
+						Two ways to analyse pixel data of image(s):
+            <br>1. Static image histogram
+            <br>2. Live or dynamic histogram
+          </section>
+          
+          <section>
+            <h2>Static Histogram</h2>
+            <div class="fragment">
+              <p>Accepting image file using OpenCV</p>
+              <pre><code class="language-python Terminal" style="white-space: pre-line;">cap = cv2.imread("image.png", 0)</code></pre>
+            </div>
+          </section>
+
+          <section>
+            <p style="font-size: 1.2em">Plotting histogram</p>
+            <div class="fragment">Grayscale:
+              <pre><code class="language-python Terminal" style="white-space: pre-line;">plt.hist(cap.ravel(),256,[0,256])</code></pre>
+            <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; 256 represents the intensity range of each pixel</pre>
+            </div>
+            <div class="fragment">
+              RGB:
+              <pre><code class="language-python Terminal" >plt.figure()
+for i,col in enumerate(color): # for each color channel
+    histr = cv2.calcHist([img],[i],None,[256],[0,256])
+    plt.plot(histr,color = col)
+    plt.xlim([0,256]) </code></pre>
+            </div>
+          </section>
+
+          <section>
+            Show histogram
+            <pre><code class="language-python Terminal">plt.show()</code></pre>
+          </section>
+          
+          <section>
+            <h2>Live Histogram</h2>
+            <div class="fragment">
+              <br>Accepting video file using OpenCV
+              <pre><code class="language-python Terminal">cap = cv2.VideoCapture('video.mp4')</code></pre>
+            </div>
+            <div class="fragment">
+              Accepting live webcam video feed
+              <pre><code class="language-python Terminal">cap = cv2.VideoCapture(0)</code></pre>
+            </div>
+          </section>
+
+          <section>
+            To display the video file/live webcam video
+            <pre><code class="language-python Terminal">cv2.imshow("Live feed", cap)
+color="rgb"</code></pre>
+            <pre style='background-color: #ffffcc; border-left: 6px solid #ffeb3b; padding: 4px; white-space: pre-line;' class="fragment"> &#10067; <b>Why does it only show a static image?</b>
+
+            This code shows the current frame of the video file or webcam image. To show the whole video or webcam feed, this code needs to be put in a loop to display the latest frame constantly.</pre>
+          </section>
+
+          <section>
+            <img class="plain" src="https://365psd.com/images/istock/previews/1016/101676959-danger-warning-attention-sign-icon.jpg" width="200" height="200" align="middle" alt="ALERT">
+            <p style="color:red; font-size: 2.4em;">WARNING: LARGE CHUNKS OF CODE AHEAD</p>
+          </section>
+
+          <section>
+            Initialize graph and axes
+            <pre><code class="language-python Terminal"># Initialize plot.
+fig, ax = plt.subplots()
+if color == 'rgb':
+    ax.set_title('Histogram (RGB)')
+else:
+    ax.set_title('Histogram (grayscale)')
+ax.set_xlabel('Bin')
+ax.set_ylabel('Frequency')</code></pre>
+          </section>
+
+          <section>
+            Visuals - line settings
+            <pre><code class="language-python Terminal"># Initialize plot line object(s). Turn on interactive plotting and show plot.
+lw = 0.8 # line width
+alpha = 0.7 # opacity of graph
+if color == 'rgb':
+    lineR, = ax.plot(np.arange(bins), np.zeros((bins,)), c='b', lw=lw, alpha=alpha)
+    lineG, = ax.plot(np.arange(bins), np.zeros((bins,)), c='g', lw=lw, alpha=alpha)
+    lineB, = ax.plot(np.arange(bins), np.zeros((bins,)), c='r', lw=lw, alpha=alpha)
+else:
+    lineGray, = ax.plot(np.arange(bins), np.zeros((bins,1)), c='k', lw=lw)
+ax.set_xlim([0, bins-1])
+ax.set_ylim([0, 8000])
+plt.ion()
+plt.show()</code></pre>
+          </section>
+
+          <section>
+            While loop for continue processing frames
+            <pre><code class="language-python Terminal">while True:
+    (grabbed, frame) = cap.read()
+
+    if not grabbed:
+        break
+
+    # Normalize histograms based on number of pixels per frame.
+    numPixels = np.prod(frame.shape[:2])</code></pre>
+          </section>
+
+          <section>
+            <em>[Inside the while loop]</em>
+            <pre><code class="language-python Terminal">    if color == 'rgb':
+        cv2.imshow('RGB', frame)
+        (b, g, r) = cv2.split(frame)
+        histogramR = cv2.calcHist([r], [0], None, [bins], [0, 255])
+        histogramG = cv2.calcHist([g], [0], None, [bins], [0, 255])
+        histogramB = cv2.calcHist([b], [0], None, [bins], [0, 255])
+        lineR.set_ydata(histogramR)
+        lineG.set_ydata(histogramG)
+        lineB.set_ydata(histogramB)
+    else:
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        cv2.imshow('Grayscale', gray)
+        histogram = cv2.calcHist([gray], [0], None, [bins], [0, 255]) / numPixels
+        lineGray.set_ydata(histogram)</code></pre>
+          </section>
+
+          <section>
+            <div>
+              <em>[Inside the while loop]</em>
+              <pre><code class="language-python Terminal">    fig.canvas.draw()
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break</code></pre>
+            </div>
+
+            <div class="fragment">
+            <em>[Outside the while loop]</em>
+            <pre><code class="language-python Terminal">cap.release() # to stop the camera from recording
+cv2.destroyAllWindows() # to close live feed
+plt.close() # to close histogram</code></pre>
+            </div>
+          </section>
+        <!--END OF OPENCV-->
+        </section> 
+
+        
+        <!-- OPENCV BOUNDING BOX-->
+        <section>
+          <section>
+						<div class="alert alert-info">Bounding Box</div>
+						<p style='font-style: italic;'>Isolating objects using distinct colors</p>
+					</section>
+					<section data-transition="zoom">
+						<p>How it works</p>
+						<img src="/static/sg.png" width="650" height="380" align="middle" alt="SG"></img>
+						<br>
+						<p>If we were to isolate the "red parts"....</p>
+					</section>
+					<section data-transition="zoom">
+						<img src="/static/sgr.png"></img>
+						<p>Using a similar histogram idea, we can isolate a prominent colour with a mask</p>
 					</section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p>
-							<span style="display: inline-block;" class="fragment fade-right">fade-right, </span>
-							<span style="display: inline-block;" class="fragment fade-up">up, </span>
-							<span style="display: inline-block;" class="fragment fade-down">down, </span>
-							<span style="display: inline-block;" class="fragment fade-left">left</span>
-						</p>
-						<p class="fragment fade-in-then-out">fade-in-then-out</p>
-						<p class="fragment fade-in-then-semi-out">fade-in-then-semi-out</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+						<div class="alert alert-danger" role="alert">The following pieces of code are inside the while loop</div>
 					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs html">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+					<section>
+						<div class="alert alert-info" role="alert">Setting lower and upper bounds for red color
+              <pre><code class="language-python Terminal" style="white-space: pre-line;">low_red = np.array([255,255,255])
+high_red = np.array([255,0,0])
+							</code>Initialise a Numpy Array with Red, Green and Blue values</pre>
+						</div>
+						<div class="fragment">
+              <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'><code class="language-python Terminal" style="white-space: pre-line;">red_mask = cv2.inRange(hsv_frame, low_red, high_red)
+							</code>inRange function creates a mask</pre>
 						</div>
 					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs javascript">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section data-background-iframe="https://hakim.se" data-background-interactive>
-					<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
-						<h2>Iframe Backgrounds</h2>
-						<p>Since reveal.js runs on the web, you can easily embed other web content. Try interacting with the page in the background.</p>
+					<section>
+					<div class="fragment">Creates an array of contours 
+              <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'><code class="language-python Terminal" style="white-space: pre-line;">contours, retrieveval = cv2.findContours(red_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+							</code>Using cv2 find Contours in-built library</pre>
 					</div>
-				</section>
+					<div class="fragment">Sort the array (list) from largest to smallest values
+              <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'><code class="language-python Terminal" style="white-space: pre-line;">contours = sorted(contours, key = lambda x:cv2.contourArea(x), reverse=True)</code>eg. [254, 252, 198...]</pre>
+					</div>
+					</section>
+					<section data-background-iframe="https://docs.opencv.org/2.4/modules/core/doc/drawing_functions.html#cv2.rectangle" data-background-interactive>
+						<div class="alert alert-info" role="alert">
+              Open CV Rectangle<pre><code class="language-python Terminal">if len(contours)>0: #check if webcam has started recording
+	(x,y,w,h) = cv2.boundingRect(contours[0])
+	#takes the first values in the array 
+	print("X_mid:",x+w/2,"Y_mid:",y+h/2) #optional
+	cv2.rectangle(frame,(x,y),(x+w,y+h), (0,255,0),2)
+	#inbuilt function for drawing rectangles </code> 
+Documentation shows the function parameters
+</pre>
+						</div>
+					</section>
+					<section>
+						<div class="fragment">Showcase the live feed
+              <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'><code class="language-python Terminal" style="white-space: pre-line;">cv2.imshow("Tracking", frame)
+    cv2.imshow("Mask over", red_mask)
+							</code></pre>
+						</div>
+						<div class="fragment">Creating a kill key 'q' to exit the program
+              <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'><code class="language-python Terminal">if cv2.waitKey(1) & 0xFF == ord('q'):
+	break</code></pre>
+						</div>
+					</section>
+        </section>
 
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim data-line-numbers="4,8-11">
-import React, { useState } from 'react';
+        <!--BREAK + SUMMARY -->
+        <section>
+          <section>What you have learnt as of now</section>
+          <!--https://github.com/EmilyOng/lucky-
+        </section>
 
-function Example() {
-  const [count, setCount] = useState(0);
-
-  return (
-    &lt;div&gt;
-      &lt;p&gt;You clicked {count} times&lt;/p&gt;
-      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
-        Click me
-      &lt;/button&gt;
-    &lt;/div&gt;
-  );
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
->>>>>>> 2d974e94fe7e2d45c39ad1395117ffa6bae83491
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="https://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
+        <!--CANNY EDGE DETECTION-->
+        <section>
+          <section>Canny Edge Detection</section>
+          <section>
+            <blockquote class="blockquote">Canny Edge Detection is a popular edge detection algorithm. It was developed by John F. Canny in 1986.</blockquote>
+          </section>
+          <section>
+            <div class="alert alert-info" role="alert">Does anybody know where this place is?</div>
+            <img src="../static/canny_edge/EdgeDunmanHigh.png">
+          </section>
+          <section>
+            <ol>
+              <li>Noise reduction</li>
+              <li>Finding Intensity Gradient of the Image</li>
+              <li>Non-maximum Suppression</li>
+              <li>Hysteresis Thresholding</li>
+            </ol>
+          </section>
+          <section>
+            <div class="alert alert-danger" role="alert">It is hard to do edge detection on a noisy image!</div>
+            <img src="../static/canny_edge/noisy_image.png">
+          </section>
+          <section>
+            <h1>Gaussian Blur</h1>
+            <small>An image smoothening technique</small>
+            <blockquote class="blockquote">Gaussian functions are often used to represent the probability density function of a normally distributed random variable.</blockquote>
+          </section>
+          <section>
+            <small>Probability(A < X < B) = Area under the curve between A and B</small>
+            <img src="../static/canny_edge/gaussian.png">
+          </section>
+          <section>
+            For each pixel, the Gaussian function:
+            <small>Assigns weight to the pixel and its surrounding pixels based on the Gaussian function, hence the resulting weight will be based on feedback from its surrounding neighbours.</small>
+            <div class="fragments">
+              <img class="plain" src="https://fr.mathworks.com/help/examples/images/win64/SmoothImageWithGaussianFiltersExample_01.png">
+            </div>
+          </section>
+          <section>
+            <h1>Finding intensity gradient</h1>
+            <small>Applying the mask of the Sobel operator works like the 1st-order derivative. <br/>The goal is to calculate the difference of pixel intensities in a edge region.</small>
+          </section>
+          <section>
+            <small>The resulting pixel values will be the magnitude of the gradient of each pixel.</small>
+            <img src="../static/canny_edge/sobel_operator.png">
+          </section>
+          <section>
+            <h1>Non-maximum Suppression</h1>
+            <small>A full scan of image is done to remove any unwanted pixels which may not constitute the edge.</small>
+          </section>
+          <section>
+            <small>If the pixel is pointing in the y-directon, the pixel value will be compared with the one above and below it. If it is the 'local maximum' among the 2 pixels, its value will be preserved. Else, it will be <em>suppressed</em> to 0.</small>
+          </section>
+          <section>
+            <img src="../static/canny_edge/nms.png">
+          </section>
+          <section>
+            <h1>Hysteresis Thresholding</h1>
+            <small>Finding the optimal value that constitute an edge</small>
+          </section>
+          <section>
+            <small>We define 2 threshold values: <em>minVal</em> & <em>maxVal</em></small>
+            <pre class="fragments">
+              <code class="language-python Terminal">
+                is_edge = False
+                if pixel >= maxVal:
+                  is_edge = True
+                elif pixel < minVal:
+                  pixel = 0
+                  is_edge = False
+                else:
+                  # minVal <= pixel < maxVal
+                  if pixel.isConnectedTo(edges):
+                    is_edge = True
+                  else:
+                    pixel = 0
+                    is_edge = False
+              </code>
+            </pre>
+          </section>
+					<!-- Final Slide any qns -->
+        	<section>
+						hi
+					</section>
+        </section>
+        
 			</div>
-
+			
 		</div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 		<script src="js/reveal.js"></script>
-
 		<script>
-
-			// More info https://github.com/hakimel/reveal.js#configuration
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+      //$(function(){
+        //$("#intro_to_rpi").load("intro_to_rpi.html");
+      //$("#python").load("python.html"); 
+      //});
 			Reveal.initialize({
-				controls: true,
-				progress: true,
-				center: true,
-				hash: true,
-
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true },
-					{ src: 'plugin/search/search.js', async: true },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
 				]
 			});
-
-		</script>
-
+      
+      
+      
+    </script> 
 	</body>
 </html>

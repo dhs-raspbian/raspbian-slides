@@ -354,14 +354,16 @@ body {
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
-  position: absolute;
+  position: fixed;
   display: none;
-  height: 3px;
+  height: 2px;
   width: 70%;
   bottom: 0;
+  right: 0;
   left: 0;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.2);
+  margin: 10px auto;
   color: #fff; }
 
 .reveal .progress:after {

@@ -41,7 +41,5 @@
     "socket.io": "^2.2.0"
   },
   "license": "MIT",
-  "dependencies": {
-    "nunjucks": "^3.2.0"
-  }
+  "dependencies": {}
 }

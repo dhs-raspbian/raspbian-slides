@@ -1,0 +1,30 @@
+ Volume in drive C is OS
+ Volume Serial Number is 5EAB-7707
+
+ Directory of C:\Users\Kenneth\Desktop\raspbianslides
+
+12/20/2019  06:35 PM    <DIR>          .
+12/20/2019  06:35 PM    <DIR>          ..
+11/20/2019  07:55 AM               137 .gitignore
+11/20/2019  07:55 AM                81 .travis.yml
+12/20/2019  03:10 PM               464 bower.json
+12/20/2019  03:10 PM             1,062 CONTRIBUTING.md
+12/05/2019  07:58 PM    <DIR>          css
+12/20/2019  03:10 PM            16,722 demo.html
+12/20/2019  03:10 PM             3,393 gruntfile.js
+12/20/2019  03:39 PM    <DIR>          hist_demo
+12/20/2019  04:37 PM            31,236 index.html
+12/20/2019  03:39 PM    <DIR>          js
+12/05/2019  07:56 PM    <DIR>          lib
+12/20/2019  03:10 PM             1,103 LICENSE
+12/20/2019  03:10 PM                25 main.sh
+12/13/2019  09:20 AM    <DIR>          node_modules
+12/20/2019  03:10 PM           221,569 package-lock.json
+12/20/2019  03:10 PM             1,148 package.json
+12/05/2019  07:58 PM    <DIR>          plugin
+12/20/2019  03:31 PM                40 README.md
+12/20/2019  06:35 PM                 0 some-descriptive-filename.txt
+12/20/2019  03:39 PM    <DIR>          static
+12/05/2019  07:58 PM    <DIR>          test
+              13 File(s)        276,980 bytes
+              10 Dir(s)  308,322,652,160 bytes free

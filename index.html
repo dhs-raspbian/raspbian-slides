@@ -42,13 +42,13 @@
 			<div class="slides">
         <!--MAIN INTRO -->
 				<section>
-          <p style='font-size: 2em;'>A Raspberry Pi Workshop</p>
+          <p style='font-size: 2em;'>The Raspberry Pi Workshop</p>
         </section>
 
         <!--INTRO TO RASPBERRY PI-->
         <section>
           <section>
-            <p style='font-size: 1.8em; color: #aaa;'><b>What is a Raspberry Pi?</b></p>
+            <p style='font-size: 1.8em; color: #876543'><b>What is a Raspberry Pi?</b></p>
             <p class='fragment'>A single board computer, which contains</p>
             <ul class='fragment'>
               <li>CPU</li>
@@ -65,32 +65,25 @@
           </section>
         </section>
 
-        <!-- Raspbian OS -->
-				<section  data-background-iframe="https://en.wikipedia.org/wiki/Raspbian" data-background-interactive>
-          <div style="position: right; width: 40%; box-shadow: 0 1px 4px #fff, 0 5px 25px rgba(0,0,0,0.2); background-color: #3FBF7F; color: #fff; padding: 20px; font-size: 45px; text-align: center; border-radius: 15px;">
-            <p>Raspbian OS</p>
-          </div>
-          <div style="position: absolute; width: 40%; box-shadow: 0 1px 4px #fff, 0 5px 25px rgba(0,0,0,0.2); background-color: #728C7F; color: #fff; padding: 10px; font-size: 25px; text-align: center; border-radius: 15px;">
-					  <p class="fragment">Like every other operating system (Windows/MacOS), Raspbian OS manages
-					  <span class="fragment">computer hardware,</span> 
-            <span class="fragment">software resources,</span> 
-            <span class="fragment">and computer programs</span></p>
-
-					  <p class="fragment">
-						  It is based off Debian (Linux)
-            </p>
-          </div>
+        <!-- RASPBIAN OS -->
+        <section>
+          <section data-background-iframe="https://en.wikipedia.org/wiki/Raspbian" data-background-interactive>
+            <div style="position: relative; right:35px; width: 40%; background-color: rgb(160, 217, 255); color: rgb(0, 61, 110); padding: 10px; font-size: 45px; text-align: center; border-radius: 15px; font-weight:bold;">
+              <p>Raspbian OS</p>
+            </div>
+            <div style="position: relative; right:35px; width: 40%; padding: 10px; background-color: rgb(208, 255, 196); color: #2e4b2e; font-size: 22px; text-align: center; border-radius: 15px;">
+              <span class="fragment">Similar to (Windows/MacOS), Raspbian Operating System manages </span>
+              <span class="fragment">computer hardware,</span> 
+              <span class="fragment">software resources and programs</span> 
+            </div>
+          </section>
+          <section data-background-iframe="https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg" data-background-interactive>
+            <div style="position: relative; right:35px; width: 40%; background-color: rgb(146, 182, 206); color: rgb(0, 61, 110); padding: 10px; text-align: center; border-radius: 15px; font-weight:bold;">
+              <p style="font-size:0.9em">It is based off the open source Linux Distribution Debian</p>
+              <p style="font-size:0.7em">The software gives users great control over their computers</p>
+            </div>
+          </section>
         </section>
-
-        <!--<section>
-          <span id='duplicate'></span>
-        </section>
-        <script>
-          $(function(){
-            $("#duplicate").load("templates/test.html");
-          });
-        </script>-->
-				<!--?php require "templates../opencv.html";?-->
         
         <!--INTRO TO OPEN CV-->
 				<section>
@@ -117,7 +110,7 @@
 						</ul>
 					</section>
           <section>
-            <p style='font-size: 1.8em; color: #aaa;'>What is OpenCV then?</p>
+            <p style='font-size: 1.8em; color: #964B00;'>What is OpenCV then?</p>
             <p class="fragment">OpenCV stands for Open Source Computer Vision Library</p>
             <p class="fragment">OpenCV was built to provide a common infrastructure for computer vision applications.</p>
             <p class="fragment">It contains more than 2500 optimized algorithms.</p>
@@ -157,8 +150,6 @@
   					color: #3385ff;'>Hint: It is in the Documents folder</p>
 					</section>
 				</section>
-				<!-- End of Terminal-->
-        
 
         <!--HISTOGRAM EXPLAINED-->
         <section>
@@ -224,7 +215,6 @@
 				</section>
         
         <!--INTRO TO PYTHON-->
-        <!--<div id="python"></div>-->
 			  <section>
           <section>Python</section>
 
@@ -247,7 +237,7 @@
           
           <section id="fragments">
             <pre class="fragment">
-              <code class="language-python Terminal">
+              <code class="language-python Terminal" data-line-numbers>
               if RAM == 5: # Conditional statement
                 print("A pi has 5GB of RAM.")
               elif RAM == 4: # Second conditional statement
@@ -266,7 +256,7 @@
           
           <section id="fragments">
             <pre class="fragment">
-              <code class="language-python Terminal">
+              <code class="language-python Terminal" data-line-numbers>
               def addition (a, b):
                 result = a + b
                 return result
@@ -276,7 +266,7 @@
             Call the function using "function_name(inputs)"
             </pre>
             <pre class="fragment">
-              <code class="language-python Terminal">
+              <code class="language-python Terminal" data-line-numbers>
               def addition (a, b):
                 result = a + b
                 print(result)
@@ -286,14 +276,14 @@
           </section>
           <section id="fragments">
             <pre class="fragment">
-              <code class="language-python Terminal">
+              <code class="language-python Terminal" data-line-numbers>
               for i in range (5):
                 print(i)
               </code>
             >>> 0 1 2 3 4
             </pre>
             <pre class="fragment">
-              <code class="language-python Terminal">
+              <code class="language-python Terminal" data-line-numbers>
               for i in range (1, 10, 2):
                 print(i)
               </code>
@@ -302,7 +292,7 @@
           </section>
 			    <section>
             <pre class="fragment">
-              <code class="language-python Terminal">
+              <code class="language-python Terminal" data-line-numbers>
               name = "Raspberry"
               for char in name:
                 print(char)
@@ -313,7 +303,7 @@
 			    <section>
           While Loops &rarr; Continues while condition is met
             <pre class="fragment">
-              <code class="language-python Terminal">
+              <code class="language-python Terminal" data-line-numbers>
               name = "recording"
               while True:
                 print(name)
@@ -326,7 +316,7 @@
           </section>
           <section>
             <pre class="fragment">
-              <code class="language-python Terminal">
+              <code class="language-python Terminal" data-line-numbers>
               import numpy
               import cv2
                 </code>Using pre-built functions from libraries.
@@ -387,7 +377,7 @@
             </div>
             <div class="fragment">
               RGB:
-              <pre><code class="language-python Terminal" >plt.figure()
+              <pre><code class="language-python Terminal" data-line-numbers>plt.figure()
 for i,col in enumerate(color): # for each color channel
     histr = cv2.calcHist([img],[i],None,[256],[0,256])
     plt.plot(histr,color = col)
@@ -428,7 +418,7 @@ color="rgb"</code></pre>
 
           <section>
             Initialize graph and axes
-            <pre><code class="language-python Terminal"># Initialize plot.
+            <pre><code class="language-python Terminal" data-line-numbers># Initialize plot.
 fig, ax = plt.subplots()
 if color == 'rgb':
     ax.set_title('Histogram (RGB)')
@@ -440,7 +430,7 @@ ax.set_ylabel('Frequency')</code></pre>
 
           <section>
             Visuals - line settings
-            <pre><code class="language-python Terminal"># Initialize plot line object(s). Turn on interactive plotting and show plot.
+            <pre><code class="language-python Terminal" data-line-numbers># Initialize plot line object(s). Turn on interactive plotting and show plot.
 lw = 0.8 # line width
 alpha = 0.7 # opacity of graph
 if color == 'rgb':
@@ -457,19 +447,19 @@ plt.show()</code></pre>
 
           <section>
             While loop for continue processing frames
-            <pre><code class="language-python Terminal">while True:
+            <pre><code class="language-python Terminal" data-line-numbers>while True:
     (grabbed, frame) = cap.read()
 
     if not grabbed:
         break
 
-    # Normalize histograms based on number of pixels per frame.
+    # Normalize histograms by no. of pixels per frame.
     numPixels = np.prod(frame.shape[:2])</code></pre>
           </section>
 
           <section>
             <em>[Inside the while loop]</em>
-            <pre><code class="language-python Terminal">    if color == 'rgb':
+            <pre><code class="language-python Terminal" data-line-numbers>    if color == 'rgb':
         cv2.imshow('RGB', frame)
         (b, g, r) = cv2.split(frame)
         histogramR = cv2.calcHist([r], [0], None, [bins], [0, 255])
@@ -488,7 +478,7 @@ plt.show()</code></pre>
           <section>
             <div>
               <em>[Inside the while loop]</em>
-              <pre><code class="language-python Terminal">    fig.canvas.draw()
+              <pre><code class="language-python Terminal" data-line-numbers>    fig.canvas.draw()
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break</code></pre>
@@ -496,7 +486,7 @@ plt.show()</code></pre>
 
             <div class="fragment">
             <em>[Outside the while loop]</em>
-            <pre><code class="language-python Terminal">cap.release() # to stop the camera from recording
+            <pre><code class="language-python Terminal" data-line-numbers>cap.release() # to stop the camera from recording
 cv2.destroyAllWindows() # to close live feed
 plt.close() # to close histogram</code></pre>
             </div>
@@ -504,7 +494,6 @@ plt.close() # to close histogram</code></pre>
         <!--END OF OPENCV-->
         </section> 
 
-        
         <!-- OPENCV BOUNDING BOX-->
         <section>
           <section>
@@ -546,7 +535,7 @@ high_red = np.array([255,0,0])
 					</section>
 					<section data-background-iframe="https://docs.opencv.org/2.4/modules/core/doc/drawing_functions.html#cv2.rectangle" data-background-interactive>
 						<div class="alert alert-info" role="alert">
-              Open CV Rectangle<pre><code class="language-python Terminal">if len(contours)>0: #check if webcam has started recording
+              Open CV Rectangle<pre><code class="language-python Terminal" data-line-numbers>if len(contours)>0: #check if webcam has started recording
 	(x,y,w,h) = cv2.boundingRect(contours[0])
 	#takes the first values in the array 
 	print("X_mid:",x+w/2,"Y_mid:",y+h/2) #optional
@@ -569,10 +558,11 @@ Documentation shows the function parameters
 					</section>
         </section>
 
-        <!--BREAK + SUMMARY -->
+        <!--BREAK + QUIZ -->
         <section>
           <section>What you have learnt as of now</section>
-          <!--https://github.com/EmilyOng/lucky-
+          <!--https://github.com/EmilyOng/lucky-->
+          <section  data-background-iframe="https://codecollab.io/@19y5c34emilyonghuiqi/Lucky" data-background-interactive></section>
         </section>
 
         <!--CANNY EDGE DETECTION-->
@@ -638,29 +628,42 @@ Documentation shows the function parameters
           <section>
             <small>We define 2 threshold values: <em>minVal</em> & <em>maxVal</em></small>
             <pre class="fragments">
-              <code class="language-python Terminal">
-                is_edge = False
-                if pixel >= maxVal:
-                  is_edge = True
-                elif pixel < minVal:
+              <code class="language-python Terminal" data-line-numbers>minVal:
                   pixel = 0
                   is_edge = False
                 else:
                   # minVal <= pixel < maxVal
                   if pixel.isConnectedTo(edges):
-                    is_edge = True
+                    is_edge language-python Terminal">
+                is_edge = False
+                if pixel >= maxVal:
+                  is_edge = True
+                elif pixel = True:
                   else:
                     pixel = 0
                     is_edge = False
               </code>
             </pre>
           </section>
-					<!-- Final Slide any qns -->
-        	<section>
-						hi
-					</section>
         </section>
-        
+
+        <!-- ELECTRONIC COMPONENTS -->
+        <section>
+          <section>Basics to Electronics</section>
+          <section>We have 
+            <div class="fragment">
+              <p>Accepting image file using OpenCV</p>
+              <pre><code class="language-python Terminal" style="white-space: pre-line;">cap = cv2.imread("image.png", 0)</code></pre>
+            </div>
+          </section>
+          <section></section>
+        </section>
+
+        <!-- Final Slide any qns -->
+        <section>
+          <section>Do you have any questions?</section>
+        </section>
+
 			</div>
 			
 		</div>

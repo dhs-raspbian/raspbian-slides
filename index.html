@@ -45,209 +45,84 @@
           <p style='font-size: 2em;'>The Raspberry Pi Workshop</p>
         </section>
 
-        <!--INTRO TO RASPBERRY PI-->
-        <section>
-          <section>
-            <p style='font-size: 1.8em; color: #876543'><b>What is a Raspberry Pi?</b></p>
-            <p class='fragment'>A single board computer, which contains</p>
-            <ul class='fragment'>
-              <li>CPU</li>
-              <li>Random Access Memory (RAM)</li>
-              <li>Wifi/Bluetooth</li>
-            </ul>
-            <p class='fragment'>So basically, like a regular computer but with some different features.</p> 
-          </section>
-          <section data-transition="zoom">
-            <img src="https://raw.githubusercontent.com/SeeedDocument/Raspberry-Pi-4/master/img/hardware-overview-1400.jpg">Hardware Overview (Raspberry Pi 4)</img>
-          </section>
-          <section data-transition="zoom">
-              <img src="/static/make.png">Projects are found all over the internet</img>
-          </section>
-        </section>
 
-        <!-- RASPBIAN OS -->
-        <section>
-          <section data-background-iframe="https://en.wikipedia.org/wiki/Raspbian" data-background-interactive>
-            <div style="position: relative; right:35px; width: 40%; background-color: rgb(160, 217, 255); color: rgb(0, 61, 110); padding: 10px; font-size: 45px; text-align: center; border-radius: 15px; font-weight:bold;">
-              <p>Raspbian OS</p>
-            </div>
-            <div style="position: relative; right:35px; width: 40%; padding: 10px; background-color: rgb(208, 255, 196); color: #2e4b2e; font-size: 22px; text-align: center; border-radius: 15px;">
-              <span class="fragment">Similar to (Windows/MacOS), Raspbian Operating System manages </span>
-              <span class="fragment">computer hardware,</span> 
-              <span class="fragment">software resources and programs</span> 
-            </div>
-          </section>
-          <section data-background-iframe="https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg" data-background-interactive>
-            <div style="position: relative; right:35px; width: 40%; background-color: rgb(146, 182, 206); color: rgb(0, 61, 110); padding: 10px; text-align: center; border-radius: 15px; font-weight:bold;">
-              <p style="font-size:0.9em">It is based off the open source Linux Distribution Debian</p>
-              <p style="font-size:0.7em">The software gives users great control over their computers</p>
-            </div>
-          </section>
-        </section>
-        
-        <!--INTRO TO OPEN CV-->
-				<section>
-					<section style='font-size: 2em;'>What is Computer Vision and OpenCV?</section>
-					<section>
-						<blockquote class="blockquote">
-						  Computer Vision is the field of computer science that enables computers to identify and process objects in images and videos in the same way that humans do.
-						</blockquote>
-					</section>
-					<section data-transition="zoom"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.analyticsinsight.net%2Fwp-content%2Fuploads%2F2019%2F04%2FComputer-Vision12.png&f=1&nofb=1"></img>Representation of computer vision
-					</section>
-					<section id="fragments">
-						<p>Applications of computer vision</p>
-						<ul class="fragment">
-						  <li>Intruder alert</li>
-						  <li>Method of authentication (unlocking your phone through
-							fingerprint/facial recognition)
-						  </li>
-						  <li>Monitor traffic flow</li>
-						  <li>Identification of criminals</li>
-						  <li>A form of user input (hand gestures)</li>
-						  <li>Self-driving cars</li>
-						  <li class="fragment"><em>And many more...!</em></li>
-						</ul>
-					</section>
-          <section>
-            <p style='font-size: 1.8em; color: #964B00;'>What is OpenCV then?</p>
-            <p class="fragment">OpenCV stands for Open Source Computer Vision Library</p>
-            <p class="fragment">OpenCV was built to provide a common infrastructure for computer vision applications.</p>
-            <p class="fragment">It contains more than 2500 optimized algorithms.</p>
-            <p class="fragment">Makes computer vision programs easier to build.</p>
-          </section>
-				</section>
-
-				<!--INTRO TO TERMINAL-->
-        <section>
-          <section>
-            Using the Terminal 
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.macworld.co.uk%2Fcmsdata%2Ffeatures%2F3608274%2FTerminalicon2_thumb800.png&f=1&nofb=1" width='70%'></img>
-          </section>
-					
-					<section>
-					Ctrl-Alt-T to launch the terminal
-					<img src="/static/terminal.jfif" width='70%'></img>
-					<p style="font-size: 0.8em;">Alternatively, click on its logo or open it from the menu.</p>
-					</section>
-
-					<section>
-            <p style="color: #aaa;">Terminal commands</p>
-            <div style="background-color: #affaaf; padding: 1px; border-left: 6px solid #33b333;" class="fragment">
-              <p style= 'font-size: 0.8em; text-align: center;'>Showing items in your current directory</p>
-					    <pre><code class="language-bash Terminal">ls</code>(List)>> Desktop Documents Home Downloads Music </pre>
-            </div>
-					  <pre class="fragment"><code class="language-bash Terminal">cd</code>Use this code to navigate to another directory</pre>
-					  <pre class="fragment"><code class="language-bash Terminal">cd Documents</code>Navigating to the "Documents Directory" </pre>
-					  <pre class="fragment"><code class="language-bash Terminal">cd ..</code>Navigating out of the current directory</pre>
-					</section>
-
-					<section>
-						<pre class="fragment"><code class="language-bash Terminal">python test.py</code>Running a python file "test.py" </pre>
-          	<p class="fragment">Your task now: navigate to the histogram python file you have just saved and run it.</p>
-						<p class="fragment" style= 'font-size: 0.8em; 
-						text-align: center;
-  					color: #3385ff;'>Hint: It is in the Documents folder</p>
-					</section>
-				</section>
-
-        <!--HISTOGRAM EXPLAINED-->
-        <section>
-					<section>Histograms</section>
-          
-          <section>
-            Images are made up of a large number of pixels.
-            <br/>
-            <left><img src="https://bogotobogo.com/python/OpenCV_Python/images/BasicImageOperations/CloudyGoldenGate_grayscale.jpg" width="250" height="192" alt="Gate"></left>
-            <right><img src="https://i.imgur.com/Ta1QtPf.jpg" width="250" height="192" alt="Zoomed"></right>
-            <right><img src="https://i.imgur.com/cPsN3pG.jpg" width="250" height="192" alt="Zoomed"></right>
-            <br/>Each pixel has a brightness intensity value, showing how bright that spot in the image is.
-          </section>
-
-					<section>
-            Image intensity values range from 0 to 255,
-						<br>giving rise to a total range of 256 values
-            <img src="https://bhushanshikhare.files.wordpress.com/2015/05/histogram-legend.jpeg" align="middle">
-            <br>
-            Grayscale Histogram
-          </section>
-
-          <section>
-            Colored images are made up of 3 channels - red, green and blue.
-            <br>
-            <left><img src="https://geometrian.com/programming/reference/subpixelzoo/square_RGB.png" width="350" height="300" alt="RGB" ></left>
-            <right><img src="https://www.mathworks.com/help/examples/matlab/win64/ColorAnalysisWithBivariateHistogramExample_06.png" width="350" height="300"  alt="Histogram"></right>
-            <br>
-            RGB Histogram
-          </section>
-          
-          <section data-transition="slide-in zoom-out">
-            <img src="https://www.mathworks.com/help/examples/matlab/win64/ColorAnalysisWithBivariateHistogramExample_06.png" width="700" height="480"  alt="Histograms"></img>
-            <p>
-            The X and Y-axis indicates the intensity and frequency of a certain color value respectively
-            </p>
-          </section>
-        	<section data-transition="zoom-in convex-out">
-						<p style= 'font-size: 2.2em; 
-						text-align: center;
-  					color: #3385ff;
-  					font-style: oblique;
-  					text-shadow: 4px 8px #b3d1ff;'>
-							Okay, but what do people even use histograms for?
-						</p>
-        	</section>
-
-					<section data-transition="zoom-in convex-out" id="fragments">
-						<img src="https://tr1.cbsistatic.com/hub/i/r/2015/09/30/f66fef72-5d57-48cc-bd8c-7ec0941e73ef/resize/770x/ac0363c3e414d51bafb1dd9b1c8a604a/dataanalysisistockrobuart.jpg" width="390" height="350" alt="Analysis"><br>
-						It allows data scientists and engineers  to visually analyse the frequency and distrbution of data
-        	</section>
-
-					<section data-transition="zoom-in convex-out" id="fragments">
-						<img src=" https://prd-wret.s3-us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/wss-cycle-streamflow-rain-chart.gif"  alt="Streamflow Hisogram"><br>
-						It allows geographers and hydrologists to map out the intensity and analyse the rainfall
-        	</section>
-          <section data-transition="zoom-in" id="fragments">
-						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3.bp.blogspot.com%2F_8-OrJOvdwVI%2FS2plsI0y-iI%2FAAAAAAAAACc%2FNILMxS5hXQw%2Fs640%2FHistogramBasicTutorial.jpg&f=1&nofb=1" width="629" height="300" alt="Photo-histogram"><br>
-						It allows photographers to check the exposure (how bright or dark) of an image
-        	</section>
-          
-          
-				</section>
-        
         <!--INTRO TO PYTHON-->
-			  <section>
-          <section>Python</section>
+		<section>
+			
+          <section>
+						<div style="background-color: #ffb3cc; padding: 15px; border-left: 8px solid #ff0055;">
+              <p style="font-size: 1.9em;">Refresher to Python</p>
+            </div>
+					</section>
 
           <section id="fragments">
-          <pre class="fragment"><code class="language-python Terminal">message = "Who here is familiar with Python?"</code></pre>
-          <pre class="fragment"><code class="language-python Terminal">print(message)</code> >>> Who here is familiar with Python?</pre>
+            <!--<pre class="fragment"><code class="language-python Terminal">message = "Who here is familiar with Python?"</code></pre>-->
+            <p>Printing(displaying) things in python</p>
+            <p style="font-size:0.6em;">You can print a value directly or the variable, depending on the use case.</p>
+            <p style="font-size:0.7em;">For example, printing the value directly:</p>
+            <pre class="fragment"><code class="language-python Terminal">print("Who here is familiar with Python?")</code> >>> Who here is familiar with Python?</pre>
+            <div class="fragment">
+              <p style="font-size:0.7em;">Or declaring the data as a variable and printing the variable:</p>
+              <pre><code class="language-python Terminal">number = 12345
+print(number)</code> >>> 12345</pre>
+            </div>
           </section>
           
           <section id="fragments">
+            <pre class="fragment"><code class="language-python Terminal">running = False</code>Boolean variable (True or False)</pre>
             <pre class="fragment"><code class="language-python Terminal">RAM = 4</code>Integer variable</pre>
             <pre class="fragment"><code class="language-python Terminal">CPU_GHZ = 1.5</code>Float variable</pre>
             <pre class="fragment"><code class="language-python Terminal">name = "Raspberry Pi"</code>String variable</pre>
             <pre class="fragment">
-              <code class="language-python Terminal">
-              tools = ["Mouse", "Keyboard", "Monitor", 
-              "HDML Cable", "Micro USB Power Cable", 
-              "Micro SD Card"]
-            </code>Array (An array in Python can contain any types of variables, <br/>be it integer, float, or string, or even all at once.)</pre>
+<!-----------><code class="language-python Terminal">tools = ["Mouse", "Keyboard", "Monitor", "HDML Cable", "Micro USB Power Cable", "Micro SD Card"]</code>Array (An array in Python can contain any types of variables, <br/>be it integer, float, or string, or even all at once.)</pre>
           </section>
           
           <section id="fragments">
-            <pre class="fragment">
-              <code class="language-python Terminal" data-line-numbers>
-              if RAM == 5: # Conditional statement
-                print("A pi has 5GB of RAM.")
-              elif RAM == 4: # Second conditional statement
-                print("A pi has 4GB of RAM.")
-              else: # If all the above is false
-                print("I do not know...")
+            <p style="font-size: 0.7em;">How to check if variables meets a certain criteria?</p>
+            <pre class="fragment"><code class="language-python Terminal" data-line-numbers>if RAM == 5: # Conditional statement
+  print("A pi has 5GB of RAM.")
+elif RAM == 4: # Second conditional statement
+  print("A pi has 4GB of RAM.")
+else: # If all the above is false
+  print("I do not know...")
             </code>If-elif-else conditionals & comments</pre>
           </section>
 
-          <section id="fragments">
+          <section>
+            <p style="font-size: 0.7em;">Doing simple math on numbers in python.</p>
+            <p style="font-size: 0.6em;">(applies to both integers and floats)</p>
+            <pre class="fragment"><code class="language-python Terminal">x = 10</code></pre>
+            <pre class="fragment">Addition<code class="language-python Terminal">print(x + 8)</code>18</pre>
+            <pre class="fragment">Subtraction<code class="language-python Terminal">print(x - 3.5)</code>6.5</pre>
+            <pre class="fragment">Multiplication<code class="language-python Terminal">x * 2.6</code>26.0</pre>
+            <pre class="fragment">Division<code class="language-python Terminal">x / 4</code>2.5</pre>
+          </section>
+
+          <section>
+            <p style="font-size: 0.7em;">Note:</p>
+            <div style="background-color: #ff7346; padding: 1px; border-left: 6px solid #7a211b;" class="fragment">
+              <p style="font-size: 0.5em;">Please take note that some math operations may return unexpected types.<br><br>
+              For example, 2.6*10 is expected to be 26 but python returns 26.0</p>
+            </div>
+            <div style="background-color: #ff7346; padding: 1px; border-left: 6px solid #7a211b;" class="fragment">
+              <p style="font-size: 0.5em;">Another thing to take note is that these expressions do not change the actual variable. For example: </p>
+            </div>
+            <div style="background-color: #ff7346; padding: 1px; border-left: 6px solid #7a211b;" class="fragment">
+              <pre><code class="language-python Terminal">x = 10
+x + 10
+print(x)</code>10</pre>
+            </div>
+            <div style="background-color: #48d1cc; padding: 1px; border-left: 6px solid #008b8b;" class="fragment">
+              <p style="font-size: 0.5em;">To actually change the variable, assign the equation to the variable again. For example: </p>
+              <pre class="fragment"><code class="language-python Terminal">x = 10
+x = x + 10
+print(x)</code>20</pre>
+            </div>
+          </section>
+
+          <section>
+            <p style="font-size: 0.7em;">Doing more math on numbers in python.</p>
+            <p style="font-size: 0.6em;">(applies to both integers and floats)</p>
             <pre class="fragment"><code class="language-python Terminal">RAM += 5</code>Shorthand for "RAM = RAM + 5"</pre>
             <pre class="fragment"><code class="language-python Terminal">RAM = RAM / 2</code>Divison (returns a float if number has a remainder)</pre>
             <pre class="fragment"><code class="language-python Terminal">RAM = RAM // 2</code>Floor Division (returns an integer)</pre>
@@ -322,39 +197,232 @@
                 </code>Using pre-built functions from libraries.
             </pre>
           </section>
+					<section>
+						<div class="alert alert-danger" role="alert">Task:</div>
+						<p class="fragment">Use OCR to detect words from an image. Hint: use the google library</p>
+					</section>
 			  </section> 
+
+
+        <!--INTRO TO RASPBERRY PI-->
+        <section>
+        	<section>
+						<div style='font-size: 2em; border-left: 8px solid #1a8cff;' class="alert alert-info" role="alert" >Raspberry Pi</div>
+						<p style='font-size: 1.3em; font-style:italic; color: #4d9900'>the hardware</p>
+					</section>
+          <section>
+            <p style='font-size: 1.8em; color: #876543'><b>What is a Raspberry Pi?</b></p>
+            <p class='fragment'>A single board computer, which contains</p>
+            <ul class='fragment'>
+              <li>CPU</li>
+              <li>Random Access Memory (RAM)</li>
+              <li>Wifi/Bluetooth</li>
+            </ul>
+            <p class='fragment'>So basically, like a regular computer but with some different features.</p> 
+          </section>
+          <section data-transition="zoom">
+            <img src="https://raw.githubusercontent.com/SeeedDocument/Raspberry-Pi-4/master/img/hardware-overview-1400.jpg">Hardware Overview (Raspberry Pi 4)</img>
+          </section>
+          <section data-transition="zoom">
+              <img src="/static/make.png">Projects are found all over the internet</img>
+          </section>
+					<section data-background-iframe="https://en.wikipedia.org/wiki/Raspbian" data-background-interactive>
+            <div style="position: relative; right:35px; width: 40%; background-color: rgb(160, 217, 255); color: rgb(0, 61, 110); padding: 10px; font-size: 45px; text-align: center; border-radius: 15px; font-weight:bold;">
+              <p>Raspbian OS</p>
+            </div>
+            <div style="position: relative; right:35px; width: 40%; padding: 10px; background-color: rgb(208, 255, 196); color: #2e4b2e; font-size: 22px; text-align: center; border-radius: 15px;">
+              <span class="fragment">Similar to (Windows/MacOS), Raspbian Operating System manages </span>
+              <span class="fragment">computer hardware,</span> 
+              <span class="fragment">software resources and programs</span> 
+            </div>
+          </section>
+          <section data-background-iframe="https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg" data-background-interactive>
+            <div style="position: relative; right:35px; width: 40%; background-color: rgb(146, 182, 206); color: rgb(0, 61, 110); padding: 10px; text-align: center; border-radius: 15px; font-weight:bold;">
+              <p style="font-size:0.9em">It is based off the open source Linux Distribution Debian</p>
+              <p style="font-size:0.7em">The software gives users great control over their computers</p>
+            </div>
+          </section>
+        </section>
         
-        <!--APPLICATION OF OPEN CV + HISTOGRAM ACTIVITY-->
+        <!--INTRO TO OPEN CV-->
+				<section>
+					<section style='font-size: 1.7em; font-style: italic;'>What is Computer Vision and OpenCV? Is it a field of computer science?</section>
+					<section>
+						<div class="alert alert-danger" role="alert">Yes. It enables computers to identify and process objects in images and videos</div>
+						<div class="alert alert-info" role="alert">OpenCV (Open Source Computer Vision Library) is a open source Python/C++ library containing functions to manipulate these data.</div>
+            <p class="fragment">It contains more than 2500 optimized algorithms!</p>
+					</section>
+					<section data-transition="zoom"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.analyticsinsight.net%2Fwp-content%2Fuploads%2F2019%2F04%2FComputer-Vision12.png&f=1&nofb=1"></img>Representation of computer vision
+					</section>
+					<section id="fragments">
+						<p>Applications of computer vision</p>
+						<ul class="fragment">
+						  <li>Intruder alert</li>
+						  <li>Method of authentication (unlocking your phone through
+							fingerprint/facial recognition)
+						  </li>
+						  <li>Identification of criminals</li>
+						  <li>A form of user input (hand gestures)</li>
+						  <li>Self-driving cars</li>
+						  <li class="fragment"><em>And many more...!</em></li>
+						</ul>
+					</section>
+				</section>
+
+				<!--INTRO TO TERMINAL-->
         <section>
           <section>
-            <p style='font-size: 2.2em;'>Using OpenCV to...
-						</p>
-						<p>open files/live webcam video</p>
-            <p>display image/video histograms</p>
+            <div style='font-size: 2em; background-color:#9f9fdf; border-left: 8px solid #3939ac;' class="alert alert-info" role="alert" >Terminal</div>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.macworld.co.uk%2Fcmsdata%2Ffeatures%2F3608274%2FTerminalicon2_thumb800.png&f=1&nofb=1" width='50%'></img>
           </section>
+					
+					<section>
+						<p>The following slides are:</p>
+						<div class="alert alert-danger" role="alert">For Apple MAC/Linux Users</div>
+						<p class="fragment">Windows Users, scroll right down..</p>
+					</section>
+					<section>
+					Ctrl-Alt-T to launch the terminal
+					<img src="/static/terminal.jfif" width='70%'></img>
+					<p style="font-size: 0.8em;">Alternatively, click on its logo or open it from the menu.</p>
+					</section>
 
-          <section>
-            <p style='font-size: 1.3em;'>Let's start coding!</p>
-          </section>
-          
-          <section>
-            <p>First, open up the code editor Thonny.</p>
-            <img src='static/thonny/thonny_menu.png' width='440px'></img>
-            <img src='static/thonny/thonny_interface.png' width='440px'></img>
-          </section>
+					<section>
+            <p style="color: #aaa;">Terminal commands</p>
+            <div style="background-color: #affaaf; padding: 1px; border-left: 6px solid #33b333;" class="fragment">
+              <p style= 'font-size: 0.8em; text-align: center;'>Showing items in your current directory</p>
+					    <pre><code class="language-bash Terminal">ls</code>(List)>> Desktop Documents Home Downloads Music </pre>
+            </div>
+					  <pre class="fragment"><code class="language-bash Terminal">cd</code>Use this code to navigate to another directory</pre>
+					  <pre class="fragment"><code class="language-bash Terminal">cd Documents</code>Navigating to the "Documents Directory" </pre>
+					  <pre class="fragment"><code class="language-bash Terminal">cd ..</code>Navigating out of the current directory</pre>
+					</section>
+					
+					<!--Windows-->
+					<section>
+						<p>The following slides are:</p>
+						<div class="alert alert-danger" role="alert">For Windows Users</div>
+						<p class="fragment">Mac Users, scroll right down for the task below</p>
+					</section>
+					
+					<section>
+						<img src="https://www.howtogeek.com/wp-content/uploads/2017/02/Windows_106-650x300.jpg" width="390" height="350" alt="Analysis"><br>
+						<p>Press the Windows Key and type cmd</p>
+						<p>Alternatively, press "Windows button-r" and type cmd. Press enter.</p>
+					</section>
+					<section>
+            <p style="color: #aaa;">Command Prompt (CMD) commands</p>
+            <div style="background-color: #affaaf; padding: 1px; border-left: 6px solid #33b333;" class="fragment">
+              <p style= 'font-size: 0.8em; text-align: center;'>Showing items in your current directory</p>
+					    <pre><code class="language-bash Terminal">dir</code>(List)>> Desktop Documents Home Downloads Music </pre>
+            </div>
+					  <pre class="fragment"><code class="language-bash Terminal">cd</code>Use this code to navigate to another directory</pre>
+					  <pre class="fragment"><code class="language-bash Terminal">cd Documents</code>Navigating to the "Documents Directory" </pre>
+					  <pre class="fragment"><code class="language-bash Terminal">cd ..</code>Navigating out of the current directory</pre>
+					</section>
+					<section>
+						<h1>Your task now for all users!</h1>
+						<pre class="fragment"><code class="language-bash Terminal">python test.py</code>Running a python file "test.py" </pre>
+          	<p class="fragment">Your task now: navigate to the histogram python file you have just saved and run it.</p>
+						<p class="fragment" style= 'font-size: 0.8em; 
+						text-align: center;
+  					color: #3385ff;'>Hint: It is in the Documents folder</p>
+					</section>
+				</section>
 
-          <section>
+
+				<!--Trackbar-->
+				<section>
+					<section><div style="background-color: #80d4ff; padding: 15px; border-left: 9px solid #0088cc;">
+              <p style="font-size: 1.8em;">Learning GUI features for the trackbar </p>
+            </div></section>
+					<section>
             <p>Importing essential modules</p>
             <pre><code class="language-python" style="white-space: pre-line;">import numpy as np
               import cv2
               from matplotlib import pyplot as plt
             </code></pre>
-            <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'  class="fragment"> &#128712; What are these for?<ul>
+            <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'  class="fragment"> &#128712; What are these for? Not all are needed now<ul>
               <li>Numpy is a useful mathematical library that allows us to <br/>work easier with the large array of pixel information.</li>
-              <li>cv2 contans useful functions whose algorithms are extremely efficient in processing images and video.</li>
+              <li>cv2 contans useful functions whose algorithms are efficient in processing images and video.</li>
               <li>Matplotlib is a graph-plotting library for us to better <br/>visualize data.</li></ul></pre>
           </section>
 
+					
+				</section>
+
+        <!--HISTOGRAM EXPLAINED-->
+        <section>
+					<section>
+						<div style="background-color: #b3b3ff; padding: 15px; border-left: 9px solid #6666ff;">
+              <p style="font-size: 2.3em;">Histograms </p>
+            </div>
+					</section>
+          
+          <section>
+            Images are made up of a large number of pixels.
+            <br/>
+            <left><img src="https://bogotobogo.com/python/OpenCV_Python/images/BasicImageOperations/CloudyGoldenGate_grayscale.jpg" width="250" height="192" alt="Gate"></left>
+            <right><img src="https://i.imgur.com/Ta1QtPf.jpg" width="250" height="192" alt="Zoomed"></right>
+            <right><img src="https://i.imgur.com/cPsN3pG.jpg" width="250" height="192" alt="Zoomed"></right>
+            <br/>Each pixel has a brightness intensity value, showing how bright that spot in the image is.
+          </section>
+
+					<section>
+            Image intensity values range from 0 to 255,
+						<br>giving rise to a total range of 256 values
+            <img src="https://bhushanshikhare.files.wordpress.com/2015/05/histogram-legend.jpeg" align="middle">
+            <br>
+            Grayscale Histogram
+          </section>
+
+          <section>
+            Colored images are made up of 3 channels - red, green and blue.
+            <br>
+            <left><img src="https://geometrian.com/programming/reference/subpixelzoo/square_RGB.png" width="350" height="300" alt="RGB" ></left>
+            <right><img src="https://www.mathworks.com/help/examples/matlab/win64/ColorAnalysisWithBivariateHistogramExample_06.png" width="350" height="300"  alt="Histogram"></right>
+            <br>
+            RGB Histogram
+          </section>
+          
+          <section data-transition="slide-in zoom-out">
+            <img src="https://www.mathworks.com/help/examples/matlab/win64/ColorAnalysisWithBivariateHistogramExample_06.png" width="700" height="480"  alt="Histograms"></img>
+            <p>
+            The X and Y-axis indicates the intensity and frequency of a certain color value respectively
+            </p>
+          </section>
+        	<section data-transition="zoom-in convex-out">
+						<p style= 'font-size: 2.2em; 
+						text-align: center;
+  					color: #3385ff;
+  					font-style: oblique;
+  					text-shadow: 4px 8px #b3d1ff;'>
+							Okay, but what do people even use histograms for?
+						</p>
+        	</section>
+
+					<section data-transition="zoom-in convex-out" id="fragments">
+						<img src=" https://prd-wret.s3-us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/thumbnails/image/wss-cycle-streamflow-rain-chart.gif"  alt="Streamflow Hisogram"><br>
+						It allows geographers and hydrologists to map out the intensity and analyse the rainfall
+        	</section>
+          <section data-transition="zoom-in" id="fragments">
+						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3.bp.blogspot.com%2F_8-OrJOvdwVI%2FS2plsI0y-iI%2FAAAAAAAAACc%2FNILMxS5hXQw%2Fs640%2FHistogramBasicTutorial.jpg&f=1&nofb=1" width="629" height="300" alt="Photo-histogram"><br>
+						It allows photographers to check the exposure (how bright or dark) of an image
+        	</section>
+
+        	<!--OPEN CV + HISTOGRAM ACTIVITY-->
+          <section>
+            <p style='font-size: 1.3em;'>Let's start coding! We will ...</p>
+						<p>open files/live webcam video</p>
+            <p>display image/video histograms</p>
+          </section>
+          
+          <section>
+            <p>First, open up "Histogram_Worksheet" in the Lesson Files Folder using Google Colab</p>
+            <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcolab.research.google.com%2Fimg%2Fcolab_favicon_256px.png&f=1&nofb=1' width='300px'></img>
+						<p>Click File>>Create a Local Copy</p>
+          </section>
+					
           <section>
 						Two ways to analyse pixel data of image(s):
             <br>1. Static image histogram
@@ -497,8 +565,8 @@ plt.close() # to close histogram</code></pre>
         <!-- OPENCV BOUNDING BOX-->
         <section>
           <section>
-						<div class="alert alert-info">Bounding Box</div>
-						<p style='font-style: italic;'>Isolating objects using distinct colors</p>
+						<div style='font-size: 2.2em; background-color:#9fbfdf; border-left: 8px solid #336699;' class="alert alert-info" role="alert" >Color Detection</div>
+						<div class="alert alert-info">Isolating objects using distinct colors</div>
 					</section>
 					<section data-transition="zoom">
 						<p>How it works</p>
@@ -563,11 +631,15 @@ Documentation shows the function parameters
           <section>What you have learnt as of now</section>
           <!--https://github.com/EmilyOng/lucky-->
           <section  data-background-iframe="https://codecollab.io/@19y5c34emilyonghuiqi/Lucky" data-background-interactive></section>
-        </section>
+        </section>	
 
         <!--CANNY EDGE DETECTION-->
         <section>
-          <section>Canny Edge Detection</section>
+          <section>
+						<div style="background-color: #000000; padding: 1px; border-left: 10px solid #9B9B9B;">
+              <p style="font-size: 2em; color: #ffffff">Canny Edge Detection</p>
+            </div>
+					</section>
           <section>
             <blockquote class="blockquote">Canny Edge Detection is a popular edge detection algorithm. It was developed by John F. Canny in 1986.</blockquote>
           </section>
@@ -626,42 +698,18 @@ Documentation shows the function parameters
             <small>Finding the optimal value that constitute an edge</small>
           </section>
           <section>
-            <small>We define 2 threshold values: <em>minVal</em> & <em>maxVal</em></small>
-            <pre class="fragments">
-              <code class="language-python Terminal" data-line-numbers>minVal:
-                  pixel = 0
-                  is_edge = False
-                else:
-                  # minVal <= pixel < maxVal
-                  if pixel.isConnectedTo(edges):
-                    is_edge language-python Terminal">
-                is_edge = False
-                if pixel >= maxVal:
-                  is_edge = True
-                elif pixel = True:
-                  else:
-                    pixel = 0
-                    is_edge = False
-              </code>
-            </pre>
+            <!--https://towardsdatascience.com/canny-edge-detection-step-by-step-in-python-computer-vision-b49c3a2d8123-->
+            <img src="https://miro.medium.com/max/1350/1*jnqS5hbRwAmU-sgK552Mgg.png">
           </section>
-        </section>
-
-        <!-- ELECTRONIC COMPONENTS -->
-        <section>
-          <section>Basics to Electronics</section>
-          <section>We have 
-            <div class="fragment">
-              <p>Accepting image file using OpenCV</p>
-              <pre><code class="language-python Terminal" style="white-space: pre-line;">cap = cv2.imread("image.png", 0)</code></pre>
-            </div>
-          </section>
-          <section></section>
         </section>
 
         <!-- Final Slide any qns -->
         <section>
-          <section>Do you have any questions?</section>
+          <section>
+						
+						<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F_xgEM-_--PSk%2FTNqXKSX285I%2FAAAAAAAAAAY%2Fs5twK3Y07_4%2Fs1600%2F0511-1001-2519-1742_Girl_Getting_a_Pat_on_the_Back_for_a_Job_Well_Done_clipart_image.jpg&f=1&nofb=1" align="middle" alt="Pat"></img>
+						<p>Thank you! Give yourself a pat on the back</p>
+					</section>
         </section>
 
 			</div>

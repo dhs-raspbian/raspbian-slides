@@ -41,5 +41,7 @@
     "socket.io": "^2.2.0"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "system": "^2.0.1"
+  }
 }

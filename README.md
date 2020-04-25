@@ -1,3 +1,3 @@
-# [Raspberry Pi Workshop Slides](https://kennethkcpdhs.github.io/raspbianslides/)
+# [Raspberry Pi Workshop Slides](https://dhs-raspbian.github.io/raspbianslides/)
 
 Python Open CV Workshop 

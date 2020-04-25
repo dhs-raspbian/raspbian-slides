@@ -10,7 +10,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="shortcut icon" href="/static/favicon.ico"/>
+    <link rel="shortcut icon" href="static/favicon.ico"/>
 
 		<title>OpenCV Workshop</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -85,7 +85,7 @@
 					</section>
 					<section>
 					Ctrl-Alt-T to launch the terminal
-					<img src="/static/terminal.jfif" width='70%'></img>
+					<img src="static/terminal.jfif" width='70%'></img>
 					<p style="font-size: 0.8em;">Alternatively, click on its logo or open it from the menu.</p>
 					</section>
 
@@ -316,7 +316,7 @@ print(x)</code>20</pre>
             <img src="https://raw.githubusercontent.com/SeeedDocument/Raspberry-Pi-4/master/img/hardware-overview-1400.jpg">Hardware Overview (Raspberry Pi 4)</img>
           </section>
           <section data-transition="zoom">
-              <img src="/static/make.png">Projects are found all over the internet</img>
+              <img src="static/make.png">Projects are found all over the internet</img>
           </section>
 					<section data-background-iframe="https://en.wikipedia.org/wiki/Raspbian" data-background-interactive>
             <div style="position: relative; right:35px; width: 40%; background-color: rgb(160, 217, 255); color: rgb(0, 61, 110); padding: 10px; font-size: 45px; text-align: center; border-radius: 15px; font-weight:bold;">
@@ -600,12 +600,12 @@ plt.close() # to close histogram</code></pre>
 					</section>
 					<section data-transition="zoom">
 						<p>How it works</p>
-						<img src="/static/sg.png" width="650" height="380" align="middle" alt="SG"></img>
+						<img src="static/sg.png" width="650" height="380" align="middle" alt="SG"></img>
 						<br>
 						<p>If we were to isolate the "red parts"....</p>
 					</section>
 					<section data-transition="zoom">
-						<img src="/static/sgr.png"></img>
+						<img src="static/sgr.png"></img>
 						<p>Using a similar histogram idea, we can isolate a prominent colour with a mask</p>
 					</section>
 					<section>
@@ -675,7 +675,7 @@ Documentation shows the function parameters
           </section>
           <section>
             <div class="alert alert-info" role="alert">Does anybody know where this place is?</div>
-            <img src="../static/canny_edge/EdgeDunmanHigh.png">
+            <img src="..static/canny_edge/EdgeDunmanHigh.png">
           </section>
           <section>
             <ol>
@@ -687,7 +687,7 @@ Documentation shows the function parameters
           </section>
           <section>
             <div class="alert alert-danger" role="alert">It is hard to do edge detection on a noisy image!</div>
-            <img src="../static/canny_edge/noisy_image.png">
+            <img src="static/canny_edge/noisy_image.png">
           </section>
           <section>
             <h1>Gaussian Blur</h1>
@@ -696,7 +696,7 @@ Documentation shows the function parameters
           </section>
           <section>
             <small>Probability(A < X < B) = Area under the curve between A and B</small>
-            <img src="../static/canny_edge/gaussian.png">
+            <img src="static/canny_edge/gaussian.png">
           </section>
           <section>
             For each pixel, the Gaussian function:
@@ -711,7 +711,7 @@ Documentation shows the function parameters
           </section>
           <section>
             <small>The resulting pixel values will be the magnitude of the gradient of each pixel.</small>
-            <img src="../static/canny_edge/sobel_operator.png">
+            <img src="static/canny_edge/sobel_operator.png">
           </section>
           <section>
             <h1>Non-maximum Suppression</h1>
@@ -721,7 +721,7 @@ Documentation shows the function parameters
             <small>If the pixel is pointing in the y-directon, the pixel value will be compared with the one above and below it. If it is the 'local maximum' among the 2 pixels, its value will be preserved. Else, it will be <em>suppressed</em> to 0.</small>
           </section>
           <section>
-            <img src="../static/canny_edge/nms.png">
+            <img src="static/canny_edge/nms.png">
           </section>
           <section>
             <h1>Hysteresis Thresholding</h1>

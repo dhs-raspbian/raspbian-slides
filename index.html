@@ -12,7 +12,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="/static/favicon.ico"/>
 
-		<title>Raspberry Pi Workshop</title>
+		<title>OpenCV Workshop</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/reset.css">
@@ -42,9 +42,101 @@
 			<div class="slides">
         <!--MAIN INTRO -->
 				<section>
-          <p style='font-size: 2em;'>The Raspberry Pi Workshop</p>
+					<div style="border-top: 24px solid #ff0000;border-bottom: 24px solid #0000ff; border-left: 24px solid #00ff00; border-right: 24px solid #00ff00;">
+          <p style='font-size: 2.3em;'>OpenCV Workshop</p>
+          </div>
         </section>
 
+		<!--Beginner Install Instructions -->
+		<section>
+			<section>
+				<div style="background-color: #006699; padding: 15px; border-top: 24px solid #b3ccff;">
+        <p style="font-size: 2.3em; color:#ffffff">Installing OpenCV</p>
+        </div>
+				<div style='font-size: 1.3em; background-color:#6699cc; color:#d9e6f2; font-style:italic;' class="alert alert-info" role="alert">What is a library?</div>
+			</section>
+			<section id="fragments">
+
+        <div class="fragment">
+				<pre style='background-color: #666699; color:#ffffff; border-left: 8px solid #3d3d5c; padding: 4px; white-space: pre-wrap;'>We can either install from the original source or....</pre></div>
+
+
+        <div class="fragment">
+				<pre style='background-color: #6699cc; color:#ffffff; border-left: 8px solid #3d3d5c; padding: 4px; white-space: pre-wrap;'>Install using PIP! Pip is a package manager, which helps you to easily setup and get access to python libraries</pre></div>
+
+				<div class="fragment">
+				<pre style='background-color: #6699cc; color:#ffffff; border-left: 8px solid #3d3d5c; padding: 4px; white-space: pre-wrap;'>
+					<img src="static/libraries.jpg" style="width:300px;"><br>Yes libraries! Python has many well developed libraries by the community.</img></pre></div>
+
+        <div class="fragment">
+				<pre style='background-color: #666699; color:#ffffff; border-left: 8px solid #3d3d5c; padding: 4px; white-space: pre-wrap;'>Now Let's open up your terminal</pre></div>
+      	</section>
+
+				<!--INTRO TO TERMINAL-->
+          <section>
+            <div style='font-size: 2em; color: #ffffff;background-color:#ffcc00; border-left: 20px solid #ff8000;' class="alert alert-info" role="alert" >Terminal</div>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.macworld.co.uk%2Fcmsdata%2Ffeatures%2F3608274%2FTerminalicon2_thumb800.png&f=1&nofb=1" width='50%'></img>
+          </section>
+					
+					<section>
+						<p>The following slides are:</p>
+						<div class="alert alert-danger" role="alert">For Apple MAC/Linux Users</div>
+						<p class="fragment">Windows Users, scroll right down..</p>
+					</section>
+					<section>
+					Ctrl-Alt-T to launch the terminal
+					<img src="/static/terminal.jfif" width='70%'></img>
+					<p style="font-size: 0.8em;">Alternatively, click on its logo or open it from the menu.</p>
+					</section>
+
+					<section>
+            <p style="color: #aaa;">Terminal commands</p>
+            <div style="background-color: #affaaf; padding: 1px; border-left: 6px solid #33b333;" class="fragment">
+              <p style= 'font-size: 0.8em; text-align: center;'>Showing items in your current directory</p>
+					    <pre><code class="language-bash Terminal">ls</code>(List)>> Desktop Documents Home Downloads Music </pre>
+            </div>
+					  <pre class="fragment"><code class="language-bash Terminal">cd</code>Use this code to navigate to another directory</pre>
+					  <pre class="fragment"><code class="language-bash Terminal">cd Documents</code>Navigating to the "Documents Directory" </pre>
+					  <pre class="fragment"><code class="language-bash Terminal">cd ..</code>Navigating out of the current directory</pre>
+					</section>
+					
+					<!--Windows-->
+					<section>
+						<p>The following slides are:</p>
+						<div class="alert alert-danger" role="alert">For Windows Users</div>
+						<p class="fragment">Mac Users, scroll right down for the task below</p>
+					</section>
+					
+					<section>
+						<img src="https://www.howtogeek.com/wp-content/uploads/2017/02/Windows_106-650x300.jpg" width="390" height="350" alt="Analysis"><br>
+						<p>Press the Windows Key and type cmd</p>
+						<p>Alternatively, press "Windows button-r" and type cmd. Press enter.</p>
+					</section>
+					<section>
+            <p style="color: #aaa;">Command Prompt (CMD) commands</p>
+            <div style="background-color: #affaaf; padding: 1px; border-left: 6px solid #33b333;" class="fragment">
+              <p style= 'font-size: 0.8em; text-align: center;'>Showing items in your current directory</p>
+					    <pre><code class="language-bash Terminal">dir</code>(List)>> Desktop Documents Home Downloads Music </pre>
+            </div>
+					  <pre class="fragment"><code class="language-bash Terminal">cd</code>Use this code to navigate to another directory</pre>
+					  <pre class="fragment"><code class="language-bash Terminal">cd Documents</code>Navigating to the "Documents Directory" </pre>
+					  <pre class="fragment"><code class="language-bash Terminal">cd ..</code>Navigating out of the current directory</pre>
+					</section>
+				<section id="fragments">
+					<div style="background-color: #006699; padding: 10px; border-top: 10px solid #b3ccff;">
+        	<p style="font-size: 1em; color:#ffffff">Installing OpenCV</p>
+        	</div>
+        	<div class="fragment">
+					<pre style='background-color: #666699; color:#ffffff; border-left: 8px solid #3d3d5c; padding: 4px; white-space: pre-wrap;'><code class="language-python Terminal" style="white-space: pre-line;">python --version</code>Check for python install. Make sure that you have installed python3!</pre></div>
+
+					<div class="fragment">
+					<pre style='background-color: #666699; color:#ffffff; border-left: 8px solid #3d3d5c; padding: 4px; white-space: pre-wrap;'><code class="language-python Terminal" style="white-space: pre-line;">pip install opencv-python</code>Installing Open CV Library</pre></div>
+
+					<div class="fragment">
+					<pre style='background-color: #666699; color:#ffffff; border-left: 8px solid #3d3d5c; padding: 4px; white-space: pre-wrap;'><code class="language-python Terminal" style="white-space: pre-line;">pip install matplotlib</code>Installing Matplotlib Visualization Library</pre></div>
+				</section>
+    </section>
+			
 
         <!--INTRO TO PYTHON-->
 		<section>
@@ -269,72 +361,10 @@ print(x)</code>20</pre>
 					</section>
 				</section>
 
-				<!--INTRO TO TERMINAL-->
-        <section>
-          <section>
-            <div style='font-size: 2em; background-color:#9f9fdf; border-left: 8px solid #3939ac;' class="alert alert-info" role="alert" >Terminal</div>
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn1.macworld.co.uk%2Fcmsdata%2Ffeatures%2F3608274%2FTerminalicon2_thumb800.png&f=1&nofb=1" width='50%'></img>
-          </section>
-					
-					<section>
-						<p>The following slides are:</p>
-						<div class="alert alert-danger" role="alert">For Apple MAC/Linux Users</div>
-						<p class="fragment">Windows Users, scroll right down..</p>
-					</section>
-					<section>
-					Ctrl-Alt-T to launch the terminal
-					<img src="/static/terminal.jfif" width='70%'></img>
-					<p style="font-size: 0.8em;">Alternatively, click on its logo or open it from the menu.</p>
-					</section>
-
-					<section>
-            <p style="color: #aaa;">Terminal commands</p>
-            <div style="background-color: #affaaf; padding: 1px; border-left: 6px solid #33b333;" class="fragment">
-              <p style= 'font-size: 0.8em; text-align: center;'>Showing items in your current directory</p>
-					    <pre><code class="language-bash Terminal">ls</code>(List)>> Desktop Documents Home Downloads Music </pre>
-            </div>
-					  <pre class="fragment"><code class="language-bash Terminal">cd</code>Use this code to navigate to another directory</pre>
-					  <pre class="fragment"><code class="language-bash Terminal">cd Documents</code>Navigating to the "Documents Directory" </pre>
-					  <pre class="fragment"><code class="language-bash Terminal">cd ..</code>Navigating out of the current directory</pre>
-					</section>
-					
-					<!--Windows-->
-					<section>
-						<p>The following slides are:</p>
-						<div class="alert alert-danger" role="alert">For Windows Users</div>
-						<p class="fragment">Mac Users, scroll right down for the task below</p>
-					</section>
-					
-					<section>
-						<img src="https://www.howtogeek.com/wp-content/uploads/2017/02/Windows_106-650x300.jpg" width="390" height="350" alt="Analysis"><br>
-						<p>Press the Windows Key and type cmd</p>
-						<p>Alternatively, press "Windows button-r" and type cmd. Press enter.</p>
-					</section>
-					<section>
-            <p style="color: #aaa;">Command Prompt (CMD) commands</p>
-            <div style="background-color: #affaaf; padding: 1px; border-left: 6px solid #33b333;" class="fragment">
-              <p style= 'font-size: 0.8em; text-align: center;'>Showing items in your current directory</p>
-					    <pre><code class="language-bash Terminal">dir</code>(List)>> Desktop Documents Home Downloads Music </pre>
-            </div>
-					  <pre class="fragment"><code class="language-bash Terminal">cd</code>Use this code to navigate to another directory</pre>
-					  <pre class="fragment"><code class="language-bash Terminal">cd Documents</code>Navigating to the "Documents Directory" </pre>
-					  <pre class="fragment"><code class="language-bash Terminal">cd ..</code>Navigating out of the current directory</pre>
-					</section>
-					<section>
-						<h1>Your task now for all users!</h1>
-						<pre class="fragment"><code class="language-bash Terminal">python test.py</code>Running a python file "test.py" </pre>
-          	<p class="fragment">Your task now: navigate to the histogram python file you have just saved and run it.</p>
-						<p class="fragment" style= 'font-size: 0.8em; 
-						text-align: center;
-  					color: #3385ff;'>Hint: It is in the Documents folder</p>
-					</section>
-				</section>
-
-
 				<!--Trackbar-->
 				<section>
-					<section><div style="background-color: #80d4ff; padding: 15px; border-left: 9px solid #0088cc;">
-              <p style="font-size: 1.8em;">Learning GUI features for the trackbar </p>
+					<section><div style="background-color: #00b386; padding: 15px; border-left: 34px solid #66ffd9;">
+              <p style="font-size: 2.1em; color:#ffffff;">Learning GUI features for the trackbar </p>
             </div></section>
 					<section>
             <p>Importing essential modules</p>

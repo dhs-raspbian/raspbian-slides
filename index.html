@@ -47,6 +47,33 @@
           </div>
         </section>
 
+		    <!--INTRO TO OPEN CV-->
+				<section>
+					<section style='font-size: 1.7em; font-style: italic;'>What is Computer Vision and OpenCV? Is it a field of computer science?</section>
+					<section>
+						<div class="alert alert-success" role="alert">Yes. It enables computers to identify and process objects in images and videos</div>
+						<div class="alert alert-info" role="alert">OpenCV (Open Source Computer Vision Library) is a open source Python/C++ library containing functions to manipulate these data.</div>
+            <p class="fragment">It contains more than 2500 optimized algorithms!</p>
+					</section>
+					<section data-transition="zoom"><img src="https://www.nidec.com/-/media/www-nidec-com/nidec-copalelectronics/img/lidar_automotive-various-sensors_en.jpg"></img><br><p style="font-size:0.7em;" >sensors emitting different frequencies of EM waves</p>
+					</section>
+					<section data-transition="zoom"><img src="https://miro.medium.com/max/3072/1*R6vHYJrW_dTMLZq3VrSA1g.jpeg"></img>
+					</section>
+					<section data-transition="zoom"><img src="https://www.teslarati.com/wp-content/uploads/2019/11/tesla-dog-detection.jpg"></img>Tesla's Computer vision
+					</section>
+					<section id="fragments">
+						<p>Applications of computer vision</p>
+						<ul class="fragment">
+						  <li>Human and Technological Interaction (Gestures Recognition)</li>
+						  <li>Method of (secure?) authentication (facial recognition) --> Intruders?
+						  </li>
+						  <li>Detecting of safety lapses/building construction in engineering</li>
+						  <li>Self-driving cars</li>
+						  <li class="fragment"><em>And many more...!</em></li>
+						</ul>
+					</section>
+				</section>
+
 		<!--Beginner Install Instructions -->
 		<section>
 			<section>
@@ -345,31 +372,6 @@ print(x)</code>20</pre>
             </div>
           </section>
         </section>
-        
-        <!--INTRO TO OPEN CV-->
-				<section>
-					<section style='font-size: 1.7em; font-style: italic;'>What is Computer Vision and OpenCV? Is it a field of computer science?</section>
-					<section>
-						<div class="alert alert-danger" role="alert">Yes. It enables computers to identify and process objects in images and videos</div>
-						<div class="alert alert-info" role="alert">OpenCV (Open Source Computer Vision Library) is a open source Python/C++ library containing functions to manipulate these data.</div>
-            <p class="fragment">It contains more than 2500 optimized algorithms!</p>
-					</section>
-					<section data-transition="zoom"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.analyticsinsight.net%2Fwp-content%2Fuploads%2F2019%2F04%2FComputer-Vision12.png&f=1&nofb=1"></img>Representation of computer vision
-					</section>
-					<section id="fragments">
-						<p>Applications of computer vision</p>
-						<ul class="fragment">
-						  <li>Intruder alert</li>
-						  <li>Method of authentication (unlocking your phone through
-							fingerprint/facial recognition)
-						  </li>
-						  <li>Identification of criminals</li>
-						  <li>A form of user input (hand gestures)</li>
-						  <li>Self-driving cars</li>
-						  <li class="fragment"><em>And many more...!</em></li>
-						</ul>
-					</section>
-				</section>
 
 				<!--Trackbar-->
 				<section>
@@ -377,25 +379,24 @@ print(x)</code>20</pre>
               <p style="font-size: 2.1em; color:#ffffff;">Learning GUI features for the trackbar </p>
             </div></section>
 					<section>
-                        <p>Importing essential modules</p>
-                        <pre><code class="language-python" style="white-space: pre-line;">import numpy as np
-                        import cv2
-                        </code></pre>
-                        <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'  class="fragment"> &#128712; What are these for? Not all are needed now<ul>
-                        <li>Numpy is a useful mathematical library that allows us to <br/>work easier with the large array of pixel information.</li>
-                        <li>cv2 contans useful functions whose algorithms are efficient in processing images and video.</li>
-                    </section>
-                    <section>
-                        <section>
-                            <p style="font-size: 1.2em">Creating the trackbars</p>
-                            <div class="fragment">Create a window with set width and height:
-                            <pre><code class="language-python Terminal" data-line-numbers>frame = np.zeros((312, 500, 3), np.uint8)
+						<p>Importing essential modules</p>
+						<pre><code class="language-python" style="white-space: pre-line;">import numpy as np
+						import cv2
+						</code></pre>
+						<pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'  class="fragment"> &#128712; What are these for? Not all are needed now<ul>
+						<li>Numpy is a useful mathematical library that allows us to <br/>work easier with the large array of pixel information.</li>
+						<li>cv2 contans useful functions whose algorithms are efficient in processing images and video.</li>
+				</section>
+				<section>
+						<p style="font-size: 1.2em">Creating the trackbars</p>
+						<div class="fragment">Create a window with set width and height:
+						<pre><code class="language-python Terminal" data-line-numbers>frame = np.zeros((312, 500, 3), np.uint8)
 cv2.namedWindow('trackbar')</code></pre>
-                            <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; </pre>
-                            </div>
-                            <div class="fragment">
-                            Create 6 trackbars for hue, saturation and value
-                            <pre><code class="language-python Terminal" data-line-numbers>cv2.createTrackbar('lowH','trackbar',0,179,nothing)
+						<pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; </pre>
+						</div>
+						<div class="fragment">
+						Create 6 trackbars for hue, saturation and value
+						<pre><code class="language-python Terminal" data-line-numbers>cv2.createTrackbar('lowH','trackbar',0,179,nothing)
 cv2.createTrackbar('highH','trackbar',179,179,nothing)
 
 cv2.createTrackbar('lowS','trackbar',0,255,nothing)
@@ -403,26 +404,26 @@ cv2.createTrackbar('highS','trackbar',255,255,nothing)
 
 cv2.createTrackbar('lowV','trackbar',0,255,nothing)
 cv2.createTrackbar('highV','trackbar',255,255,nothing)</code></pre>
-                            </div>
-                        </section>
-                    </section>
-                    <section>
-                        <section>
-                            <p style="font-size: 1.2em">Getting trackbar position</p>
-                            <div class="fragment">Create a window with set width and height:
-                            <pre><code class="language-python Terminal" data-line-numbers>#cv2.getTrackbarPos(trackbar_label, trackbar_window)
+						</div>
+					</section>
+				<section>
+					<p style="font-size: 1.2em">Getting trackbar position</p>
+					<div class="fragment">Create a window with set width and height:
+					<pre><code class="language-python Terminal" data-line-numbers>#cv2.getTrackbarPos(trackbar_label, trackbar_window)
 cv2.getTrackbarPos('lowH','trackbar')</code></pre>
-                            <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; </pre>
-                            </div>
-                            <div class="fragment">
-                            Get the hsv values for lower and upper bound
-                            <pre><code class="language-python Terminal" data-line-numbers>  h = cv2.getTrackbarPos('lowH','trackbar')
-    s = cv2.getTrackbarPos('lowS','trackbar')
-    v = cv2.getTrackbarPos('lowV','trackbar')
-    low(or high) = np.array([h,s,v])</code></pre>
-                            </div>
-                        </section>
-                    </section>
+					<pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; </pre>
+					</div>
+					<div class="fragment">
+					Get the hsv values for lower and upper bound
+					<pre><code class="language-python Terminal" data-line-numbers>  h = cv2.getTrackbarPos('lowH','trackbar')
+s = cv2.getTrackbarPos('lowS','trackbar')
+v = cv2.getTrackbarPos('lowV','trackbar')
+low(or high) = np.array([h,s,v])</code></pre>
+					</div>
+						</section>
+					<section data-background-image="static/diagrams.jpg">
+					</section>
+				</section>
 
 					
 				</section>
@@ -493,10 +494,11 @@ cv2.getTrackbarPos('lowH','trackbar')</code></pre>
             <p>display image/video histograms</p>
           </section>
           
-          <section>
-            <p>First, open up "Histogram_Worksheet" in the Lesson Files Folder using Google Colab</p>
-            <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcolab.research.google.com%2Fimg%2Fcolab_favicon_256px.png&f=1&nofb=1' width='300px'></img>
-						<p>Click File>>Create a Local Copy</p>
+          <section data-background-iframe="https://docs.opencv.org/3.4/d1/db7/tutorial_py_histogram_begins.html" data-background-interactive>
+					<div style="position: relative; right:50px; width: 40%; background-color: rgb(0, 128, 128); color: rgb(127,255,212); padding: 10px; text-align: center; border-radius: 15px; font-weight:bold;">
+              <p style="font-size:0.9em">How CalcHist Works</p>
+            </div>
+            
           </section>
 					
           <section>
@@ -528,6 +530,11 @@ for i,col in enumerate(color): # for each color channel
     plt.xlim([0,256]) </code></pre>
             </div>
           </section>
+
+					<section data-transition="zoom">
+						<img src="https://www.w3resource.com/w3r_images/numpy-manipulation-ravel-function-image-1.png"></img>
+
+					</section>
 
           <section>
             Show histogram
@@ -654,8 +661,7 @@ plt.close() # to close histogram</code></pre>
 						<img src="static/sgr.png"></img>
 						<p>Using a similar histogram idea, we can isolate a prominent colour with a mask</p>
 					</section>
-					<section data-transition="zoom">
-						<img src="static/color_process.jpg"></img>
+					<section data-background="static/color_process.jpg">
 					</section>
 					<section>
 						<div class="alert alert-danger" role="alert">The following pieces of code are inside the while loop</div>

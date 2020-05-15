@@ -375,102 +375,6 @@ print(x)</code>20</pre>
           </section>
         </section>
 
-				<!--Trackbar-->
-				<section>
-				<section><div style="background-color: #00b386; padding: 15px; border-left: 34px solid #66ffd9;">
-                <p style="font-size: 2.1em; color:#ffffff;">Learning GUI features for the trackbar </p>
-                </div>
-                <button id="toggleTrackbar" style="background: #007acc; color: white; border-radius: 30px;">Concepts covered</button>
-                <div style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; font-size: 0.8em; display: none;' id="trackbarContents">
-                    <ul>
-                        <li>trackbar manipulation</li>
-                        <li>hsv colorspaces</li>
-                        <li>bitwise operators</li>
-                    </ul>
-                    </div>
-                    
-                </section>
-				<section>
-						<p>Importing essential modules</p>
-						<pre><code class="language-python" style="white-space: pre-line;">import numpy as np
-						import cv2
-						</code></pre>
-						<pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'  class="fragment"> &#128712; What are these for? Not all are needed now<ul>
-						<li>Numpy is a useful mathematical library that allows us to <br/>work easier with the large array of pixel information.</li>
-						<li>cv2 contans useful functions whose algorithms are efficient in processing images and video.</li>
-				</section>
-				<section>
-						<p style="font-size: 1.2em">Creating the trackbars</p>
-						<div class="fragment">Create a window with set width and height:
-						<pre><code class="language-python Terminal" data-line-numbers>frame = np.zeros((312, 500, 3), np.uint8)
-cv2.namedWindow('trackbar')</code></pre>
-						<pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; </pre>
-						</div>
-						<div class="fragment">
-						Create 6 trackbars for hue, saturation and value
-						<pre><code class="language-python Terminal" data-line-numbers>cv2.createTrackbar('lowH','trackbar',0,179,nothing)
-cv2.createTrackbar('highH','trackbar',179,179,nothing)
-
-cv2.createTrackbar('lowS','trackbar',0,255,nothing)
-cv2.createTrackbar('highS','trackbar',255,255,nothing)
-
-cv2.createTrackbar('lowV','trackbar',0,255,nothing)
-cv2.createTrackbar('highV','trackbar',255,255,nothing)</code></pre>
-						</div>
-					</section>
-                    <section>
-                        <p style="font-size: 1.2em">Getting trackbar position</p>
-                        <div class="fragment">Format:
-                        <pre><code class="language-python Terminal" data-line-numbers>#cv2.getTrackbarPos(trackbar_label, trackbar_window)
-cv2.getTrackbarPos('lowH','trackbar')</code></pre>
-                        <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; </pre>
-                        </div>
-                        <div class="fragment">
-                        Get the hsv values for lower and upper bound
-                        <pre><code class="language-python Terminal" data-line-numbers>h = cv2.getTrackbarPos('lowH','trackbar')
-s = cv2.getTrackbarPos('lowS','trackbar')
-v = cv2.getTrackbarPos('lowV','trackbar')
-low(or high) = np.array([h,s,v])</code></pre>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="fragment"></div>
-                    </section>
-                    <section>
-                        <p style="font-size: 1.2em">Process the Data</p>
-                        <div class="fragment">Convert the image data
-                            <pre><code class="language-python Terminal" data-line-numbers>frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)</code></pre>
-                            <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; cv2 stores and utilises images in the BGR format</pre>
-                        </div>
-                        <div class="fragment">
-                            Create a mask
-                            <pre><code class="language-python Terminal" data-line-numbers>mask = cv2.inRange(frame, low, high)</code></pre>
-                        </div>
-                        <div class="fragment">
-                            Apply the mask :D
-                            <pre><code class="language-python Terminal" data-line-numbers>res = cv2.bitwise_and(frame, frame, mask=mask)</code></pre>
-                        </div>
-                    </section>
-                    <section>
-                        <p style="font-size: 1.2em">But wait!</p>
-                        <div class="fragment">What does
-                        <pre><code class="language-python Terminal" style="text-align: center !important;">cv2.bitwise_and()</code></pre>
-                        actually do?
-                        </div>
-                        <div class="fragment"><img style="border:0;" src="static/thinking.png" height="400px" width="400px"></div>
-                    </section>
-                    <section data-background-image="static/diagrams.jpg">
-
-                    </section>
-                    <section>
-                        <p style="font-size: 1.2em">The image is combined with the filter</p>
-                        <img src="static/matrix1.png"><img src="static/matrix2.png">
-                    </section>
-				</section>
-
-					
-				</section>
-
         <!--HISTOGRAM EXPLAINED-->
         <section>
 					<section>
@@ -702,6 +606,101 @@ plt.close() # to close histogram</code></pre>
           </section>
         <!--END OF HISTOGRAM-->
         </section> 
+
+				<!--Trackbar-->
+				<section>
+				<section><div style="background-color: #00b386; padding: 15px; border-left: 34px solid #66ffd9;">
+                <p style="font-size: 2.1em; color:#ffffff;">Learning GUI features for the trackbar </p>
+                </div>
+                <button id="toggleTrackbar" style="background: #007acc; color: white; border-radius: 30px;">Concepts covered</button>
+                <div style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; font-size: 0.8em; display: none;' id="trackbarContents">
+                    <ul>
+                        <li>trackbar manipulation</li>
+                        <li>hsv colorspaces</li>
+                        <li>bitwise operators</li>
+                    </ul>
+                    </div>
+                    
+                </section>
+				<section>
+						<p>Importing essential modules</p>
+						<pre><code class="language-python" style="white-space: pre-line;">import numpy as np
+						import cv2
+						</code></pre>
+						<pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; white-space: pre-wrap;'  class="fragment"> &#128712; What are these for? Not all are needed now<ul>
+						<li>Numpy is a useful mathematical library that allows us to <br/>work easier with the large array of pixel information.</li>
+						<li>cv2 contans useful functions whose algorithms are efficient in processing images and video.</li>
+				</section>
+				<section>
+						<p style="font-size: 1.2em">Creating the trackbars</p>
+						<div class="fragment">Create a window with set width and height:
+						<pre><code class="language-python Terminal" data-line-numbers>frame = np.zeros((312, 500, 3), np.uint8)
+cv2.namedWindow('trackbar')</code></pre>
+						<pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; </pre>
+						</div>
+						<div class="fragment">
+						Create 6 trackbars for hue, saturation and value
+						<pre><code class="language-python Terminal" data-line-numbers>cv2.createTrackbar('lowH','trackbar',0,179,nothing)
+cv2.createTrackbar('highH','trackbar',179,179,nothing)
+
+cv2.createTrackbar('lowS','trackbar',0,255,nothing)
+cv2.createTrackbar('highS','trackbar',255,255,nothing)
+
+cv2.createTrackbar('lowV','trackbar',0,255,nothing)
+cv2.createTrackbar('highV','trackbar',255,255,nothing)</code></pre>
+						</div>
+					</section>
+                    <section>
+                        <p style="font-size: 1.2em">Getting trackbar position</p>
+                        <div class="fragment">Format:
+                        <pre><code class="language-python Terminal" data-line-numbers>#cv2.getTrackbarPos(trackbar_label, trackbar_window)
+cv2.getTrackbarPos('lowH','trackbar')</code></pre>
+                        <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; </pre>
+                        </div>
+                        <div class="fragment">
+                        Get the hsv values for lower and upper bound
+                        <pre><code class="language-python Terminal" data-line-numbers>h = cv2.getTrackbarPos('lowH','trackbar')
+s = cv2.getTrackbarPos('lowS','trackbar')
+v = cv2.getTrackbarPos('lowV','trackbar')
+low(or high) = np.array([h,s,v])</code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="fragment"></div>
+                    </section>
+                    <section>
+                        <p style="font-size: 1.2em">Process the Data</p>
+                        <div class="fragment">Convert the image data
+                            <pre><code class="language-python Terminal" data-line-numbers>frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)</code></pre>
+                            <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; cv2 stores and utilises images in the BGR format</pre>
+                        </div>
+                        <div class="fragment">
+                            Create a mask
+                            <pre><code class="language-python Terminal" data-line-numbers>mask = cv2.inRange(frame, low, high)</code></pre>
+                        </div>
+                        <div class="fragment">
+                            Apply the mask :D
+                            <pre><code class="language-python Terminal" data-line-numbers>res = cv2.bitwise_and(frame, frame, mask=mask)</code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <p style="font-size: 1.2em">But wait!</p>
+                        <div class="fragment">What does
+                        <pre><code class="language-python Terminal" style="text-align: center !important;">cv2.bitwise_and()</code></pre>
+                        actually do?
+                        </div>
+                        <div class="fragment"><img style="border:0;" src="static/thinking.png" height="400px" width="400px"></div>
+                    </section>
+                    <section data-background-image="static/diagrams.jpg">
+
+                    </section>
+                    <section>
+                        <p style="font-size: 1.2em">The image is combined with the filter</p>
+                        <img src="static/matrix1.png"><img src="static/matrix2.png">
+                    </section>
+				</section>
+
+				</section>
 
         <!-- OPENCV BOUNDING BOX-->
         <section>

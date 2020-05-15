@@ -611,15 +611,14 @@ plt.close() # to close histogram</code></pre>
 				<section>
 				<section><div style="background-color: #00b386; padding: 15px; border-left: 34px solid #66ffd9;">
                 <p style="font-size: 2.1em; color:#ffffff;">Learning GUI features for the trackbar </p>
-                </div>
-                <button id="toggleTrackbar" style="background: #007acc; color: white; border-radius: 30px;">Concepts covered</button>
-                <div style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px; font-size: 0.8em; display: none;' id="trackbarContents">
-                    <ul>
+                <button id="toggleTrackbar" style="background: #007acc; color: white; border-radius: 30px; margin: 0 auto;">Concepts covered</button>
+                    <br />
+                    <ul id="trackbarContents" style="display: none">
                         <li>trackbar manipulation</li>
                         <li>hsv colorspaces</li>
                         <li>bitwise operators</li>
                     </ul>
-                    </div>
+                </div>
                     
                 </section>
 				<section>
@@ -666,7 +665,13 @@ low(or high) = np.array([h,s,v])</code></pre>
                         </div>
                     </section>
                     <section>
-                        <div class="fragment"></div>
+                        <P>What is HSV/HSL?</P>
+                        <div style="background-color: #00b386; padding: 15px; border-left: 34px solid #66ffd9; font-size: 0.8em;">HSV is just another format to represent colours, like RGB</div>
+                        <div class="fragment">
+                            <img src="hsv.png" height="470px">
+                        </div>
+                    </section>
+                    <section data-background-iframe="http://hslpicker.com/">
                     </section>
                     <section>
                         <p style="font-size: 1.2em">Process the Data</p>
@@ -695,10 +700,19 @@ low(or high) = np.array([h,s,v])</code></pre>
 
                     </section>
                     <section>
-                        <p style="font-size: 1.2em">The image is combined with the filter</p>
-                        <img src="static/matrix1.png"><img src="static/matrix2.png">
-                    </section>
-				</section>
+                        Convert the image back to BGR format
+                        <pre><code class="language-python Terminal" data-line-numbers>res = cv2.cvtColor(res, cv2.COLOR_HSV2BGR)
+
+cv2.imshow("mask", res)
+
+if cv2.waitKey(1) == ord('q'):
+    break
+                        </code></pre>
+                        Release the camera and close windows<br>(Outside the while loop)
+                        <pre><code class="language-python Terminal" data-line-numbers>cap.release()
+cv2.destroyAllWindows()
+                        </code></pre>
+				    </section>
 
 				</section>
 

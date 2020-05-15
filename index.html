@@ -476,6 +476,13 @@ low(or high) = np.array([h,s,v])</code></pre>
 					<section>
 						<div style="background-color: #b3b3ff; padding: 15px; border-left: 9px solid #6666ff;">
               <p style="font-size: 2.3em;">Histograms </p>
+							<button id="concepts2" style="background: #5c5c8a; color: white; border-radius: 30px;">Concepts covered</button>
+                <div style='color: white; background-color: #6666cc; border-left: 6px solid #202060; padding: 4px; font-size: 0.8em; display: none;' id="concepts2-1">
+                    <ul>
+                        <li>OpenCV CalcHist</li>
+                        <li>Conversion of 2d to 1d arrays</li>
+                    </ul>
+                </div>
             </div>
 					</section>
           
@@ -662,7 +669,7 @@ plt.show()</code></pre>
           <section>
 						<div class="fragment">
 							Pause the graph to give time to refresh</p>
-							<style>
+							<!--style>
 .blinkcode {
 animation: blinker 0.001s linear infinite;
 }
@@ -672,7 +679,7 @@ animation: blinker 0.001s linear infinite;
 	opacity: 0.3;
 	}
 }
-							</style>
+							</style-->
 						<pre class="blinkcode" style="background-color: #b3b3e6; padding: 4px; white-space: pre-line; border-bottom: 8px solid #333399;"><code class="language-python Terminal" data-line-numbers># refreshes the graph by pausing the graph
 plt.pause(0.001)
 ''' add code here to give labels for x/y axis '''
@@ -701,6 +708,13 @@ plt.close() # to close histogram</code></pre>
           <section>
 						<div style='font-size: 2.2em; background-color:#9fbfdf; border-left: 8px solid #336699;' class="alert alert-info" role="alert" >Color Detection</div>
 						<div class="alert alert-info">Isolating objects using distinct colors</div>
+							<button id="concepts3" style="background: #007acc; color: white; border-radius: 30px;">Concepts covered</button>
+                <div style='color: white;background-color: #2eb8b8; border-left: 6px solid #70dbdb;  padding: 4px; font-size: 0.8em; display: none;' id="concepts3-1">
+                    <ul>
+												<li>Making use of masks</li>
+                        <li>Functional Programming</li>
+                    </ul>
+                </div>
 					</section>
 					<section data-transition="zoom">
 						<p>How it works</p>
@@ -910,15 +924,24 @@ Documentation shows the function parameters
 					{ src: 'plugin/highlight/highlight.js', async: true }
 				]
 			});
-      
-      
-      
     </script> 
     <script>
 
         $(document).ready(function() {
             $("#toggleTrackbar").click(function(){
                 $("#trackbarContents").toggle();
+            }); 
+        });
+
+				$(document).ready(function() {
+            $("#concepts2").click(function(){
+                $("#concepts2-1").toggle();
+            }); 
+        });
+
+				$(document).ready(function() {
+            $("#concepts3").click(function(){
+                $("#concepts3-1").toggle();
             }); 
         });
     </script>

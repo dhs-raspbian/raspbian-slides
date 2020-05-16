@@ -455,27 +455,36 @@ print(x)</code>20</pre>
             <br>1. Static image
             <br>2. Live or dynamic video
           </section>
+
+		  <section>
+              What are bins? </br>
+              Let our dataset be:<br>
+              <span style='font-size: 0.7em;'>0, 1, 1, 2, 3, 3, 3, 3, 4, 5, 6, 6, 6, 7, 8, 8, 9</span><br><br>
+              11 BINS:<br>
+              <img src="https://media.discordapp.net/attachments/709962749228351518/711166690947367002/unknown.png" width="518" height="384" alt="histogram with 11 bins"><br><br>
+          </section>
+
+          <section>
+              What are bins? </br>
+              Let our dataset be:<br>
+              <span style='font-size: 0.7em;'>0, 1, 1, 2, 3, 3, 3, 3, 4, 5, 6, 6, 6, 7, 8, 8, 9</span><br><br>
+              6 BINS:<br>
+              <img src="https://media.discordapp.net/attachments/709962749228351518/711167671210737674/unknown.png" width="490" height="384" alt="histogram with 6 bins">
+          </section>
           
           <section>
             <h2>Static Histogram</h2>
             <div class="fragment">
               <p>Accepting image file using OpenCV</p>
+              Colour:
+              <pre><code class="language-python Terminal" style="white-space: pre-line;">cap = cv2.imread("image.png")</code></pre>
+              Monochrome:
               <pre><code class="language-python Terminal" style="white-space: pre-line;">cap = cv2.imread("image.png", 0)</code></pre>
             </div>
           </section>
 
-		  <section>
-              What are bins? </br></br>
-              Let our dataset be:<br>
-              
-          </section>
-
           <section>
             <p style="font-size: 1.2em">Plotting histogram</p>
-            <div class="fragment">Grayscale:
-              <pre><code class="language-python Terminal" style="white-space: pre-line;">plt.hist(cap.ravel(),256,[0,256])</code></pre>
-            <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; 256 represents the intensity range of each pixel</pre>
-            </div>
             <div class="fragment">
               RGB:
               <pre><code class="language-python Terminal" data-line-numbers>plt.figure()
@@ -483,13 +492,16 @@ for i,col in enumerate(color): # for each color channel
     histr = cv2.calcHist([img],[i],None,[256],[0,256])
     plt.plot(histr,color = col)
     plt.xlim([0,256]) </code></pre>
+            <pre style='background-color: #e7f3fe; border-left: 6px solid #2196F3; padding: 4px;'> &#128712; 256 represents the intensity range of each pixel</pre>
             </div>
           </section>
 
-					<section data-transition="zoom">
-						<img src="https://www.w3resource.com/w3r_images/numpy-manipulation-ravel-function-image-1.png"></img>
-
-					</section>
+		  <section data-transition="zoom">
+            <div class="fragment">Grayscale:
+              <pre><code class="language-python Terminal" style="white-space: pre-line;">plt.hist(cap.ravel(),256,[0,256])</code></pre>
+			<img src="https://www.w3resource.com/w3r_images/numpy-manipulation-ravel-function-image-1.png" width="301" height="254"></img>
+            </div>
+		  </section>
 
           <section>
             Show histogram
@@ -510,31 +522,19 @@ for i,col in enumerate(color): # for each color channel
 
           <section>
             Making histogram live <p>&#128515;</p>
-            <pre><code class="language-python Terminal">
-# continues running while video is on
+            <pre><code class="language-python Terminal"># continues running while video is on
 while True:
 	#write code from static histogram part here</code></pre>
             <pre style='background-color: #ffffcc; border-left: 6px solid #ffeb3b; padding: 4px; white-space: pre-line;' class="fragment"> &#10067; <b>Place following lines of code in this loop</b>
 
-            To show the whole video or webcam feed, this code needs to be put in a loop to display the latest frame constantly.</pre>
+            To show the whole video or webcam feed, this code needs to be put in a loop to display the latest frame constantly.
+            
+            This is because a video is made of many frames.</pre>
           </section>
 
           <section>
             <img class="plain" src="https://365psd.com/images/istock/previews/1016/101676959-danger-warning-attention-sign-icon.jpg" width="200" height="200" align="middle" alt="ALERT">
             <p style="color:red; font-size: 2.4em;">WARNING: Code Explanation Ahead!</p>
-          </section>
-
-          <section>
-						<div class="fragment">
-							<p style="font-size: 1em">Gets the dimensions of the image and set pseudo limit</p>
-            <pre style="border-bottom: 6px solid #00b3b3;"><code class="language-python Terminal" data-line-numbers># gets total number of pixels and sets arbitrary value
-numpix =  int((img.shape[0]*img.shape[1])/30)
-    </code>Pseudo, because we randomly came up with it :(</pre>
-						</div>
-						<div class="fragment">
-							<p style="font-size: 1em">Prevents y-axis from shifting due to change in video histogram</p>
-						<pre style='background-color: #99ff99; border-bottom: 6px solid #009900; padding: 4px;'><code class="language-python Terminal" data-line-numbers>#get current axis and set a limit on the y values
-plt.gca().set_ylim([0, numpix])</code>Uses numpix pseudo variable</pre></div>
           </section>
 
           <!--section>
@@ -576,8 +576,7 @@ plt.show()</code></pre>
           </section-->
 
           <section>
-						<div class="fragment">
-							Pause the graph to give time to refresh</p>
+			<div class="fragment">Pause the graph to give time to refresh
 							<!--style>
 .blinkcode {
 animation: blinker 0.001s linear infinite;
@@ -589,15 +588,14 @@ animation: blinker 0.001s linear infinite;
 	}
 }
 							</style-->
-						<pre class="blinkcode" style="background-color: #b3b3e6; padding: 4px; white-space: pre-line; border-bottom: 8px solid #333399;"><code class="language-python Terminal" data-line-numbers># refreshes the graph by pausing the graph
+			  <pre class="blinkcode" style="background-color: #b3b3e6; padding: 4px; white-space: pre-line; border-bottom: 8px solid #333399;"><code class="language-python Terminal" data-line-numbers># refreshes the graph by pausing the graph
 plt.pause(0.001)
 ''' add code here to give labels for x/y axis '''
 ''' add code here to show graph '''
-plt.clf() # Clears the figure but keeps the window
-						</code></pre>
-						</div>
+plt.clf() # Clears the figure but keeps the window</code></pre>
+			</div>
             <div class="fragment">
-							<p style="font-size: 1em">End the code sequence with keyboard input "q"</p>
+			  <p style="font-size: 1em">End the code sequence with keyboard input "q"</p>
               <pre><code class="language-python Terminal" data-line-numbers>if cv2.waitKey(1) & 0xFF == ord('q'):
 	break</code></pre>
             </div>
@@ -608,6 +606,19 @@ plt.clf() # Clears the figure but keeps the window
 cv2.destroyAllWindows() # to close live feed
 plt.close() # to close histogram</code></pre>
             </div-->
+          </section>
+
+          <section>
+			<div class="fragment">
+			  <p style="font-size: 1em">Gets the dimensions of the image and set a reasonable limit</p>
+              <pre style="border-bottom: 6px solid #00b3b3;"><code class="language-python Terminal" data-line-numbers># gets total number of pixels and sets arbitrary value
+numpix =  int((img.shape[0]*img.shape[1])/30)
+    </code>Arbitrary, adjust if required.</pre>
+			</div>
+			<div class="fragment">
+			  <p style="font-size: 1em">Prevents y-axis from shifting due to change in video histogram</p>
+			  <pre style='background-color: #99ff99; border-bottom: 6px solid #009900; padding: 4px;'><code class="language-python Terminal" data-line-numbers>#get current axis and set a limit on the y values
+plt.gca().set_ylim([0, numpix])</code></pre></div>
           </section>
         <!--END OF HISTOGRAM-->
         </section> 
@@ -704,8 +715,7 @@ low(or high) = np.array([h,s,v])</code></pre>
                     <section data-background-image="static/bitwise.jpg">
 
                     </section>
-                    <section>
-                        <img src="static/matrix.gif" height="650px" width="1200px">
+                    <section data-background-image="static/matrix.gif">
                     </section>
                     <section>
                         Convert the image back to BGR format
